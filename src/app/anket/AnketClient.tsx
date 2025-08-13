@@ -27,30 +27,34 @@ export default function AnketClient() {
       </section>
 
       {/* Survey Section */}
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="py-8 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-2 sm:px-4 lg:px-8">
           <Reveal>
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               {/* Survey Header */}
-              <div className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-8 text-white">
-                <h2 className="text-2xl font-bold mb-2">CAKA Kuaför Müşteri Memnuniyeti Anketi</h2>
-                <p className="text-purple-100">
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 px-4 sm:px-6 py-6 sm:py-8 text-white">
+                <h2 className="text-xl sm:text-2xl font-bold mb-2">CAKA Kuaför Müşteri Memnuniyeti Anketi</h2>
+                <p className="text-sm sm:text-base text-purple-100">
                   Deneyiminizi değerlendirin, hizmetimizi geliştirmemize yardımcı olun
                 </p>
               </div>
 
               {/* Google Forms Embed */}
-              <div className="p-6">
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <div className="aspect-[4/3] w-full">
+              <div className="p-4 sm:p-6">
+                <div className="bg-gray-50 rounded-xl p-2 sm:p-4">
+                  <div className="w-full">
                     <iframe
                       src="https://docs.google.com/forms/d/e/1FAIpQLSdfU6hmVVPPd1xv5A5HWt8ASbbq58akpk5Sn1-F14rS4Y1zPQ/viewform?embedded=true"
                       width="100%"
-                      height="100%"
+                      height="600"
                       frameBorder="0"
                       marginHeight={0}
                       marginWidth={0}
-                      className="rounded-lg"
+                      className="rounded-lg w-full"
+                      style={{
+                        minHeight: '500px',
+                        maxHeight: '80vh'
+                      }}
                       title="CAKA Kuaför Müşteri Memnuniyeti Anketi"
                     >
                       Yükleniyor...
@@ -59,35 +63,35 @@ export default function AnketClient() {
                 </div>
 
                 {/* Survey Info */}
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="text-center p-4 bg-purple-50 rounded-xl">
-                    <div className="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                  <div className="text-center p-3 sm:p-4 bg-purple-50 rounded-xl">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-1">Hızlı</h3>
-                    <p className="text-sm text-gray-600">Sadece 2-3 dakika</p>
+                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Hızlı</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">Sadece 2-3 dakika</p>
                   </div>
 
-                  <div className="text-center p-4 bg-pink-50 rounded-xl">
-                    <div className="w-12 h-12 bg-pink-500 text-white rounded-full flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="text-center p-3 sm:p-4 bg-pink-50 rounded-xl">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-1">Güvenli</h3>
-                    <p className="text-sm text-gray-600">Google Forms güvencesi</p>
+                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Güvenli</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">Google Forms güvencesi</p>
                   </div>
 
-                  <div className="text-center p-4 bg-purple-50 rounded-xl">
-                    <div className="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="text-center p-3 sm:p-4 bg-purple-50 rounded-xl">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-1">Etkili</h3>
-                    <p className="text-sm text-gray-600">Hizmet kalitemizi artırır</p>
+                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Etkili</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">Hizmet kalitemizi artırır</p>
                   </div>
                 </div>
               </div>
