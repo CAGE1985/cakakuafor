@@ -219,7 +219,7 @@ export default function HakkimizdaPage() {
                 <img
                   src="/tarik.jpeg"
                   alt="Tarık ULUDAĞ"
-                  className="w-full aspect-[4/3] object-cover"
+                  className="w-full aspect-[4/5] object-cover object-[top_20%]"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Tarık ULUDAĞ</h3>

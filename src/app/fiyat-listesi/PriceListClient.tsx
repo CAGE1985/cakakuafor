@@ -89,7 +89,7 @@ function groupByCategory(rows: string[][]): Category[] {
 
 export default function PriceListClient() {
   const [categories, setCategories] = useState<Category[]>([]);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [openCategories, setOpenCategories] = useState<Set<number>>(new Set([0]));
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -104,7 +104,7 @@ export default function PriceListClient() {
         const grouped = groupByCategory(parsed);
         if (!mounted) return;
         setCategories(grouped);
-        setActiveIndex(0);
+        setOpenCategories(new Set([0])); // İlk kategoriyi açık başlat
       } catch {
         setError("Fiyat listesi yüklenirken bir hata oluştu.");
       } finally {
@@ -117,57 +117,124 @@ export default function PriceListClient() {
     };
   }, []);
 
-  const active = useMemo(() => categories[activeIndex], [categories, activeIndex]);
+  const toggleCategory = (index: number) => {
+    const newOpenCategories = new Set(openCategories);
+    if (newOpenCategories.has(index)) {
+      // Eğer tıklanan kategori zaten açıksa, kapat
+      newOpenCategories.delete(index);
+    } else {
+      // Eğer tıklanan kategori kapalıysa, diğerlerini kapat ve bunu aç
+      newOpenCategories.clear();
+      newOpenCategories.add(index);
+    }
+    setOpenCategories(newOpenCategories);
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-800 mx-auto mb-4"></div>
+          <p className="text-gray-600">Fiyat listesi yükleniyor...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-20">
+        <div className="bg-red-50 border border-red-200 rounded-xl p-6 max-w-md mx-auto">
+          <svg className="w-12 h-12 text-red-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p className="text-red-600 font-medium">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      {/* Kategori butonları */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        {categories.map((cat, idx) => (
+    <div className="space-y-4">
+      {/* Kategori Accordion */}
+      {categories.map((category, index) => (
+        <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+          {/* Kategori Başlığı */}
           <button
-            key={cat.title + idx}
-            onClick={() => setActiveIndex(idx)}
-            className={`px-4 py-2 rounded-full border text-sm transition ${
-              activeIndex === idx
-                ? "bg-black text-white border-black"
-                : "bg-white text-black border-black hover:bg-black hover:text-white"
-            }`}
+            onClick={() => toggleCategory(index)}
+            className="w-full px-6 py-4 bg-gradient-to-r from-gray-800 to-black text-white font-semibold text-left flex items-center justify-between hover:from-gray-700 hover:to-gray-900 transition-all duration-300"
           >
-            {cat.title}
+            <span className="text-lg">{category.title}</span>
+            <svg 
+              className={`w-6 h-6 transition-transform duration-300 ${
+                openCategories.has(index) ? 'rotate-180' : ''
+              }`} 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
-        ))}
-      </div>
 
-      {/* İçerik */}
-      <div className="mt-8">
-        {loading && <div className="text-sm text-black/60">Yükleniyor…</div>}
-        {error && <div className="text-sm text-red-600">{error}</div>}
-        {!loading && !error && active && (
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold">{active.title}</h2>
-            <div className="overflow-x-auto">
-              <table className="min-w-full border border-black">
-                <tbody>
-                  {active.rows.map((row, rIdx) => (
-                    <tr key={rIdx} className="border border-black">
-                      {row.map((cell, cIdx) => {
-                        const Tag = rIdx === 0 ? "th" : "td";
-                        return (
-                          <Tag
-                            key={cIdx}
-                            className="text-sm p-2 text-center border border-black"
-                          >
-                            {cell}
-                          </Tag>
-                        );
-                      })}
+          {/* Kategori İçeriği */}
+          <div className={`transition-all duration-300 ease-in-out ${
+            openCategories.has(index) ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+          } overflow-hidden`}>
+            <div className="p-6">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200">
+                      {category.rows[0]?.map((header, idx) => (
+                        <th key={idx} className="px-4 py-3 text-left font-semibold text-gray-700 text-sm">
+                          {header}
+                        </th>
+                      ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {category.rows.slice(1).map((row, rIdx) => (
+                      <tr 
+                        key={rIdx} 
+                        className={`border-b border-gray-100 transition-colors duration-200 hover:bg-gray-50 ${
+                          rIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                        }`}
+                      >
+                        {row.map((cell, cIdx) => {
+                          const isPrice = cIdx > 0 && cell.match(/[0-9]/);
+                          const isService = cIdx === 0;
+                          
+                          return (
+                            <td key={cIdx} className={`px-4 py-3 text-sm ${
+                              isService ? 'font-medium text-gray-800' : 'text-gray-600'
+                            }`}>
+                              {isPrice ? (
+                                                               <span className="font-semibold text-gray-800">
+                                 {cell.includes('₺') ? cell : `${cell} ₺`}
+                               </span>
+                              ) : (
+                                cell
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        )}
+        </div>
+      ))}
+      
+      {/* Bilgi notu */}
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
+        <p className="text-blue-700 text-sm">
+          💡 Fiyatlar saç uzunluğu ve hizmet detaylarına göre değişebilir. 
+          Detaylı bilgi için bizimle iletişime geçin.
+        </p>
       </div>
     </div>
   );

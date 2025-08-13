@@ -20,16 +20,14 @@ const NAVIGATION_ITEMS: NavigationItem[] = [
   { href: "/bizeulasin", label: "Bize Ulaşın" },
 ];
 
-const GALERI_SUBMENU_ITEMS = [
-  { href: "/galeri", label: "Galeri" },
-];
+
 
 export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const [isGaleriSubmenuOpen, setIsGaleriSubmenuOpen] = useState(false);
+
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 8);
@@ -72,9 +70,9 @@ export default function Header() {
               <Image
                 src="/cakalogo.png"
                 alt="Logo"
-                  width={200}
-                  height={58}
-                  className="bg-transparent object-contain max-h-full"
+                width={216}
+                height={80}
+                className="bg-transparent object-contain max-h-full"
                 onError={() => setLogoError(true)}
                 priority
               />
@@ -86,49 +84,7 @@ export default function Header() {
               const isActive =
                 item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
                 
-                if (item.href === "/galeri") {
-                  return (
-                    <div key={item.href} className="relative group">
-                      <button
-                        className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
-                          isActive
-                            ? "bg-black text-white"
-                            : "text-black/80 hover:text-black hover:bg-black/5"
-                        }`}
-                        onClick={() => setIsGaleriSubmenuOpen(!isGaleriSubmenuOpen)}
-                      >
-                        {item.label}
-                        <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      
-                      {isGaleriSubmenuOpen && (
-                        <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                          <div className="py-2">
-                            {GALERI_SUBMENU_ITEMS.map((subItem) => {
-                              const isSubActive = pathname === subItem.href;
-                              return (
-                                <Link
-                                  key={subItem.href}
-                                  href={subItem.href}
-                                  className={`block px-4 py-2 text-sm transition-colors ${
-                                    isSubActive
-                                      ? "bg-black text-white"
-                                      : "text-black/80 hover:bg-black/5 hover:text-black"
-                                  }`}
-                                  onClick={() => setIsGaleriSubmenuOpen(false)}
-                                >
-                                  {subItem.label}
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
+                // Galeri artık dropdown değil, direkt link
                 
               return (
                 <Link
@@ -383,13 +339,14 @@ export default function Header() {
                     </div>
                   </Link>
 
-                  <button
+                  <Link
+                    href="/galeri"
                     className={`group p-3 rounded-xl border transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
                       pathname.startsWith("/galeri")
                         ? "bg-gradient-to-br from-pink-500 to-pink-600 border-pink-400 shadow-lg"
                         : "bg-gradient-to-br from-gray-50 to-white border-gray-200 hover:border-pink-300 hover:bg-gradient-to-br hover:from-pink-50 hover:to-white"
                     }`}
-                    onClick={() => setIsGaleriSubmenuOpen(!isGaleriSubmenuOpen)}
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     <div className="flex flex-col items-center text-center space-y-1">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
@@ -410,46 +367,9 @@ export default function Header() {
                         }`}>Çalışmalarımız</div>
                       </div>
                     </div>
-                  </button>
-                  
-                  {/* Galeri Alt Menü */}
-                  {isGaleriSubmenuOpen && (
-                    <div className="col-span-2 mt-3 p-4 bg-gradient-to-br from-pink-50 to-white border border-pink-200 rounded-xl">
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="text-sm font-semibold text-pink-600">Galeri Menüsü</h3>
-                        <button
-                          onClick={() => setIsGaleriSubmenuOpen(false)}
-                          className="w-6 h-6 flex items-center justify-center rounded-full hover:bg-pink-100 transition-colors"
-                        >
-                          <svg className="w-4 h-4 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
-                        </button>
-                      </div>
-                      <div className="space-y-2">
-                        {GALERI_SUBMENU_ITEMS.map((subItem) => {
-                          const isSubActive = pathname === subItem.href;
-                          return (
-                            <Link
-                              key={subItem.href}
-                              href={subItem.href}
-                              className={`block px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
-                                isSubActive
-                                  ? "bg-pink-500 text-white shadow-md"
-                                  : "text-gray-700 hover:bg-pink-100 hover:text-pink-600"
-                              }`}
-                              onClick={() => {
-                                setIsGaleriSubmenuOpen(false);
-                                setIsMenuOpen(false);
-                              }}
-                            >
-                              {subItem.label}
                   </Link>
-                );
-              })}
-            </div>
-                    </div>
-                  )}
+                  
+                  
 
                   <Link
                     href="/anket"

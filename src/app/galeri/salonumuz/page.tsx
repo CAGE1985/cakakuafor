@@ -3,18 +3,39 @@
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import { HeartIcon } from "@/components/Icons";
+import { ImageIcon } from "@/components/Icons";
 import Image from "next/image";
 
-// 46 gelin saç modeli görseli için array - yeni dosya isimleri
-const GELIN_SAC_MODELLERI = Array.from({ length: 46 }, (_, i) => ({
-  id: i + 1,
-  src: `/gelin-sac-modelleri/${i + 1}.jpg`,
-  alt: `Gelin Saç Modeli ${i + 1}`,
-  title: `Gelin Saç Modeli ${i + 1}`,
-}));
+// Mevcut salon resimleri için array
+const SALON_RESIMLERI = [
+  { id: 1, src: "/salonumuz/1.jpg", alt: "Salonumuz 1", title: "Salonumuz 1" },
+  { id: 2, src: "/salonumuz/2.jpg", alt: "Salonumuz 2", title: "Salonumuz 2" },
+  { id: 3, src: "/salonumuz/3.jpg", alt: "Salonumuz 3", title: "Salonumuz 3" },
+  { id: 4, src: "/salonumuz/4.jpg", alt: "Salonumuz 4", title: "Salonumuz 4" },
+  { id: 5, src: "/salonumuz/5.jpg", alt: "Salonumuz 5", title: "Salonumuz 5" },
+  { id: 6, src: "/salonumuz/6.jpg", alt: "Salonumuz 6", title: "Salonumuz 6" },
+  { id: 7, src: "/salonumuz/7.jpg", alt: "Salonumuz 7", title: "Salonumuz 7" },
+  { id: 8, src: "/salonumuz/8.jpg", alt: "Salonumuz 8", title: "Salonumuz 8" },
+  { id: 13, src: "/salonumuz/13.jpg", alt: "Salonumuz 13", title: "Salonumuz 13" },
+  { id: 14, src: "/salonumuz/14.jpg", alt: "Salonumuz 14", title: "Salonumuz 14" },
+  { id: 15, src: "/salonumuz/15.jpg", alt: "Salonumuz 15", title: "Salonumuz 15" },
+  { id: 16, src: "/salonumuz/16.jpg", alt: "Salonumuz 16", title: "Salonumuz 16" },
+  { id: 17, src: "/salonumuz/17.jpg", alt: "Salonumuz 17", title: "Salonumuz 17" },
+  { id: 18, src: "/salonumuz/18.jpg", alt: "Salonumuz 18", title: "Salonumuz 18" },
+  { id: 19, src: "/salonumuz/19.jpg", alt: "Salonumuz 19", title: "Salonumuz 19" },
+  { id: 20, src: "/salonumuz/20.jpg", alt: "Salonumuz 20", title: "Salonumuz 20" },
+  { id: 21, src: "/salonumuz/21.jpg", alt: "Salonumuz 21", title: "Salonumuz 21" },
+  { id: 26, src: "/salonumuz/26.jpg", alt: "Salonumuz 26", title: "Salonumuz 26" },
+  { id: 27, src: "/salonumuz/27.jpg", alt: "Salonumuz 27", title: "Salonumuz 27" },
+  { id: 28, src: "/salonumuz/28.jpg", alt: "Salonumuz 28", title: "Salonumuz 28" },
+  { id: 29, src: "/salonumuz/29.jpg", alt: "Salonumuz 29", title: "Salonumuz 29" },
+  { id: 30, src: "/salonumuz/30.jpg", alt: "Salonumuz 30", title: "Salonumuz 30" },
+  { id: 31, src: "/salonumuz/31.jpg", alt: "Salonumuz 31", title: "Salonumuz 31" },
+  { id: 32, src: "/salonumuz/32.jpg", alt: "Salonumuz 32", title: "Salonumuz 32" },
+  { id: 33, src: "/salonumuz/33.jpg", alt: "Salonumuz 33", title: "Salonumuz 33" },
+];
 
-export default function GelinSacModelleriPage() {
+export default function SalonumuzPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
@@ -29,13 +50,13 @@ export default function GelinSacModelleriPage() {
 
   const nextImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage((selectedImage + 1) % GELIN_SAC_MODELLERI.length);
+      setSelectedImage((selectedImage + 1) % SALON_RESIMLERI.length);
     }
   };
 
   const prevImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? GELIN_SAC_MODELLERI.length - 1 : selectedImage - 1);
+      setSelectedImage(selectedImage === 0 ? SALON_RESIMLERI.length - 1 : selectedImage - 1);
     }
   };
 
@@ -54,43 +75,96 @@ export default function GelinSacModelleriPage() {
   return (
     <div className="min-h-screen pt-20 md:pt-24" onKeyDown={handleKeyDown} tabIndex={0}>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-pink-50 via-white to-purple-50 py-16 sm:py-20">
+      <section className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-16 sm:py-20">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="text-center">
               <SectionHeading 
-                title="Gelin Saç Modelleri" 
-                subtitle="Muhteşem Tasarımlar" 
-                icon={<HeartIcon />} 
+                title="Salonumuz" 
+                subtitle="Modern ve Şık Tasarım" 
+                icon={<ImageIcon />} 
               />
               <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-                En güzel gününüz için özenle seçilmiş 46 farklı gelin saç modeli. 
-                Her tasarım, gelinlerinizin hayallerini gerçeğe dönüştürmek için yaratıldı.
+                CAKA Kuaför&apos;ün modern ve şık tasarımını keşfedin. 
+                Müşterilerimizin konforu için özenle tasarlanmış mekanımızda 
+                profesyonel hizmet alabilirsiniz.
               </p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Video Section */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
           <Reveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+                Salonumuzu Tanıyın
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Modern tasarımımızı ve konforlu ortamımızı video ile keşfedin
+              </p>
+            </div>
+          </Reveal>
+          
+          <Reveal>
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <video
+                className="w-full h-full object-cover"
+                controls
+                poster="/salonumuz/video-poster.jpg"
+              >
+                <source src="/salonumuz/salon-video.mp4" type="video/mp4" />
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
+              
+              {/* Video overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+                Salon Fotoğrafları
+              </h2>
+                             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                 25 farklı açıdan salonumuzun modern ve şık tasarımını inceleyin
+               </p>
+            </div>
+          </Reveal>
+          
+          <Reveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
-              {GELIN_SAC_MODELLERI.map((model, index) => (
-                <Reveal key={model.id} delayMs={index * 50}>
+              {SALON_RESIMLERI.map((resim, index) => (
+                <Reveal key={resim.id} delayMs={index * 50}>
                   <div 
-                    className="group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-200 hover:border-pink-300 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer"
+                    className="group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-200 hover:border-blue-300 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer"
                     onClick={() => openLightbox(index)}
                   >
-                    {/* Gerçek görsel */}
-                    <Image
-                      src={model.src}
-                      alt={model.alt}
-                      width={300}
-                      height={300}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
+                                         {/* Gerçek resim */}
+                     <Image
+                       src={resim.src}
+                       alt={resim.alt}
+                       width={300}
+                       height={300}
+                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                     />
+                    
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -116,8 +190,8 @@ export default function GelinSacModelleriPage() {
             {/* Main image */}
             <div className="relative">
               <Image
-                src={GELIN_SAC_MODELLERI[selectedImage].src}
-                alt={GELIN_SAC_MODELLERI[selectedImage].alt}
+                src={SALON_RESIMLERI[selectedImage].src}
+                alt={SALON_RESIMLERI[selectedImage].alt}
                 width={800}
                 height={800}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
@@ -145,31 +219,32 @@ export default function GelinSacModelleriPage() {
 
             {/* Image counter */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full backdrop-blur-sm">
-              {selectedImage + 1} / {GELIN_SAC_MODELLERI.length}
+              {selectedImage + 1} / {SALON_RESIMLERI.length}
             </div>
 
             {/* Image title */}
             <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full backdrop-blur-sm">
-              {GELIN_SAC_MODELLERI[selectedImage].title}
+              {SALON_RESIMLERI[selectedImage].title}
             </div>
           </div>
         </div>
       )}
 
       {/* Call to Action */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-pink-500 to-purple-500">
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-500 to-cyan-500">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Hayalinizdeki Gelin Saç Modelini Seçin
+              Salonumuzu Ziyaret Edin
             </h2>
-            <p className="text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
-              Beğendiğiniz modeli seçin, uzman ekibimizle iletişime geçin ve en güzel gününüz için mükemmel saç tasarımınızı planlayın.
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Modern ve konforlu ortamımızda profesyonel hizmet almak için 
+              hemen randevu alın ve salonumuzu ziyaret edin.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:05548843878"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-pink-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
