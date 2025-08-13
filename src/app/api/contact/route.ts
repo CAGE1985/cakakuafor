@@ -36,10 +36,10 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true, message: 'E-posta başarıyla gönderildi' });
-  } catch (error) {
+  } catch (error: any) {
     console.error('E-posta gönderme hatası:', error);
     return NextResponse.json(
-      { success: false, message: `E-posta gönderme hatası: ${error.message}` },
+      { success: false, message: `E-posta gönderme hatası: ${error.message || 'Bilinmeyen hata'}` },
       { status: 500 }
     );
   }
