@@ -6,7 +6,7 @@ export async function POST(request: NextRequest) {
     const { to, subject, html } = await request.json();
 
     // E-posta transporter'ı oluştur
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'hotmail',
       auth: {
         user: process.env.EMAIL_USER, // Hotmail adresiniz
