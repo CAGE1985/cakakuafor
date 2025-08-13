@@ -17,6 +17,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Test Section - Murat */}
+      <section className="py-8 bg-gradient-to-r from-blue-500 to-purple-600">
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              Murat
+            </h1>
+            <p className="text-xl text-white/90">
+              Test değişikliği - Otomatik deployment çalışıyor!
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
