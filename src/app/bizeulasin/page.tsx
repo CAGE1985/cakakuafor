@@ -190,9 +190,9 @@ export default function BizeUlasinPage() {
           </div>
           <div>
                       <h4 className="font-semibold text-gray-800 mb-1">Randevu</h4>
-                      <p className="text-gray-600">
-                        Randevu almak için telefon veya WhatsApp'tan iletişime geçebilirsiniz.
-                      </p>
+                                        <p className="text-gray-600">
+                    Randevu almak için telefon veya WhatsApp&apos;tan iletişime geçebilirsiniz.
+                  </p>
                     </div>
                   </div>
                 </div>
@@ -262,7 +262,7 @@ export default function BizeUlasinPage() {
                 </div>
                 <p className="text-gray-700 leading-relaxed">
                   Akra Barut Oteli geçtikten sonra yolu takip edince karşınıza gelecek ilk trafik lambalarından 
-                  yaklaşık 150m sonra sol tarafta CAKA Kuaför'ü göreceksiniz.
+                  yaklaşık 150m sonra sol tarafta CAKA Kuaför&apos;ü göreceksiniz.
                 </p>
               </div>
             </Reveal>
@@ -279,8 +279,8 @@ export default function BizeUlasinPage() {
                   <h3 className="text-xl font-semibold text-gray-800">Lara Yönünden</h3>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Laura AVM'den Akra Barut Otel istikametine devam ederken ikinci trafik lambalarına gelmeden 
-                  yaklaşık 150m geride, Halk Bankası Lara şubesinin karşısında CAKA Kuaför'ü göreceksiniz.
+                  Laura AVM&apos;den Akra Barut Otel istikametine devam ederken ikinci trafik lambalarına gelmeden 
+                  yaklaşık 150m geride, Halk Bankası Lara şubesinin karşısında CAKA Kuaför&apos;ü göreceksiniz.
                 </p>
               </div>
             </Reveal>

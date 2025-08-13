@@ -4,7 +4,6 @@ import Image from "next/image";
 
 interface TeamMemberCardProps {
   member: string;
-  index: number;
 }
 
 // Türkçe karakterleri İngilizce karakterlere çeviren fonksiyon
@@ -32,7 +31,7 @@ function getFileName(member: string): string {
   return nameMapping[member] || `${member.toLowerCase()}.jpeg`;
 }
 
-export default function TeamMemberCard({ member, index }: TeamMemberCardProps) {
+export default function TeamMemberCard({ member }: TeamMemberCardProps) {
   return (
     <div className="group relative">
       <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-200 hover:border-purple-300 transition-all duration-300 hover:shadow-xl">

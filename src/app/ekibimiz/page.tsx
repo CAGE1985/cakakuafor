@@ -36,7 +36,7 @@ export default function EkibimizPage() {
                 icon={<UsersIcon />} 
               />
               <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-                CAKA Hair & Makeup Studio'nun deneyimli ve uzman ekibi, 
+                CAKA Hair & Makeup Studio&apos;nun deneyimli ve uzman ekibi, 
                 sizlere en kaliteli hizmeti sunmak için burada.
               </p>
             </div>

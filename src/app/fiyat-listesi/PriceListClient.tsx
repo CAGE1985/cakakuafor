@@ -105,7 +105,7 @@ export default function PriceListClient() {
         if (!mounted) return;
         setCategories(grouped);
         setActiveIndex(0);
-      } catch (e) {
+      } catch {
         setError("Fiyat listesi yüklenirken bir hata oluştu.");
       } finally {
         setLoading(false);
@@ -151,7 +151,7 @@ export default function PriceListClient() {
                   {active.rows.map((row, rIdx) => (
                     <tr key={rIdx} className="border border-black">
                       {row.map((cell, cIdx) => {
-                        const Tag: any = rIdx === 0 ? "th" : "td";
+                        const Tag = rIdx === 0 ? "th" : "td";
                         return (
                           <Tag
                             key={cIdx}

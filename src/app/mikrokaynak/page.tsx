@@ -172,7 +172,7 @@ export default function MikroKaynakPage() {
                   <div className="bg-green-50 border border-green-200 rounded-xl p-4">
                     <p className="font-semibold text-green-800 mb-2">Önemli:</p>
                     <p className="text-green-700">Herhangi bir kaynak sisteminde genel saç kaybı %10 ise, mikro kaynakta doğru saç seçimi, 
-                    doğru uygulama, doğru kullanım ve doğru söküm işlemi yapıldığı takdirde bu oran %1'e kadar düşmektedir.</p>
+                    doğru uygulama, doğru kullanım ve doğru söküm işlemi yapıldığı takdirde bu oran %1&apos;e kadar düşmektedir.</p>
                   </div>
                 </div>
               </div>
