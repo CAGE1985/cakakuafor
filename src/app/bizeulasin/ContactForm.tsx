@@ -32,7 +32,7 @@ export default function ContactForm() {
     try {
       // Form verilerini hazırla
       const emailData = {
-        to: "cakakuafor@hotmail.com",
+        to: "cakarandevu@gmail.com",
         subject: `CAKA Kuaför İletişim Formu: ${formData.subject}`,
         html: `
           <h2>CAKA Kuaför İletişim Formu</h2>

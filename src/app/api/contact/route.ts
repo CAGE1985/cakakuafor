@@ -1,37 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
     const { to, subject, html } = await request.json();
 
     // Debug: Environment variables'ları kontrol et
-    console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY ? '***' : 'NOT_SET');
+    console.log('EMAIL_USER:', process.env.EMAIL_USER);
+    console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? '***' : 'NOT_SET');
 
-    if (!process.env.RESEND_API_KEY) {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       return NextResponse.json(
-        { success: false, message: 'Resend API key eksik' },
+        { success: false, message: 'E-posta ayarları eksik' },
         { status: 500 }
       );
     }
 
-    // E-posta gönder
-    const { data, error } = await resend.emails.send({
-      from: 'CAKA Kuaför <noreply@caka.tr>',
-      to: [to],
-      subject: subject,
-      html: html,
+    // E-posta transporter'ı oluştur
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
-    if (error) {
-      console.error('Resend hatası:', error);
-      return NextResponse.json(
-        { success: false, message: 'E-posta gönderilirken bir hata oluştu' },
-        { status: 500 }
-      );
-    }
+    // E-posta gönder
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: to,
+      subject: subject,
+      html: html,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true, message: 'E-posta başarıyla gönderildi' });
   } catch (error) {
