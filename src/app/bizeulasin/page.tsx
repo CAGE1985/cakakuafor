@@ -1,6 +1,7 @@
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Phone, MapPin, Clock } from "@/components/Icons";
+import ContactForm from "./ContactForm";
 
 export default function BizeUlasinPage() {
   return (
@@ -286,6 +287,9 @@ export default function BizeUlasinPage() {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Section */}
+      <ContactForm />
 
       {/* YouTube Section */}
       <section className="py-16 sm:py-20 bg-gray-50">
