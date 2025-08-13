@@ -1,19 +1,62 @@
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { HeartIcon } from "@/components/Icons";
+import Image from "next/image";
 
 export const metadata = {
   title: "Gelin Saç Modelleri - CAKA Kuaför",
   description: "Muhteşem gelin saç modelleri galerimizi keşfedin. 46 farklı tasarım ile gelinleriniz için en mükemmel saç modelini seçin.",
 };
 
-// 46 gelin saç modeli görseli için array
-const GELIN_SAC_MODELLERI = Array.from({ length: 46 }, (_, i) => ({
-  id: i + 1,
-  src: `/gelin-sac-modelleri/${i + 1}.jpg`,
-  alt: `Gelin Saç Modeli ${i + 1}`,
-  title: `Gelin Saç Modeli ${i + 1}`,
-}));
+// 46 gelin saç modeli görseli için array - gerçek dosya isimleri
+const GELIN_SAC_MODELLERI = [
+  { id: 1, src: "/gelin-sac-modelleri/1.jpg", alt: "Gelin Saç Modeli 1", title: "Gelin Saç Modeli 1" },
+  { id: 2, src: "/gelin-sac-modelleri/2.jpg", alt: "Gelin Saç Modeli 2", title: "Gelin Saç Modeli 2" },
+  { id: 3, src: "/gelin-sac-modelleri/3.jpg", alt: "Gelin Saç Modeli 3", title: "Gelin Saç Modeli 3" },
+  { id: 4, src: "/gelin-sac-modelleri/4.jpg", alt: "Gelin Saç Modeli 4", title: "Gelin Saç Modeli 4" },
+  { id: 5, src: "/gelin-sac-modelleri/5.jpg", alt: "Gelin Saç Modeli 5", title: "Gelin Saç Modeli 5" },
+  { id: 6, src: "/gelin-sac-modelleri/6.jpg", alt: "Gelin Saç Modeli 6", title: "Gelin Saç Modeli 6" },
+  { id: 7, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (7).jpg", alt: "CAKA GELİNLERİ (7)", title: "CAKA GELİNLERİ (7)" },
+  { id: 8, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (8).jpg", alt: "CAKA GELİNLERİ (8)", title: "CAKA GELİNLERİ (8)" },
+  { id: 9, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (9).jpg", alt: "CAKA GELİNLERİ (9)", title: "CAKA GELİNLERİ (9)" },
+  { id: 10, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (10).jpg", alt: "CAKA GELİNLERİ (10)", title: "CAKA GELİNLERİ (10)" },
+  { id: 11, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (11).jpg", alt: "CAKA GELİNLERİ (11)", title: "CAKA GELİNLERİ (11)" },
+  { id: 12, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (12).jpg", alt: "CAKA GELİNLERİ (12)", title: "CAKA GELİNLERİ (12)" },
+  { id: 13, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (13).jpg", alt: "CAKA GELİNLERİ (13)", title: "CAKA GELİNLERİ (13)" },
+  { id: 14, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (14).jpg", alt: "CAKA GELİNLERİ (14)", title: "CAKA GELİNLERİ (14)" },
+  { id: 15, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (15).jpg", alt: "CAKA GELİNLERİ (15)", title: "CAKA GELİNLERİ (15)" },
+  { id: 16, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (16).jpg", alt: "CAKA GELİNLERİ (16)", title: "CAKA GELİNLERİ (16)" },
+  { id: 17, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (17).jpg", alt: "CAKA GELİNLERİ (17)", title: "CAKA GELİNLERİ (17)" },
+  { id: 18, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (18).jpg", alt: "CAKA GELİNLERİ (18)", title: "CAKA GELİNLERİ (18)" },
+  { id: 19, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (19).jpg", alt: "CAKA GELİNLERİ (19)", title: "CAKA GELİNLERİ (19)" },
+  { id: 20, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (20).jpg", alt: "CAKA GELİNLERİ (20)", title: "CAKA GELİNLERİ (20)" },
+  { id: 21, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (21).jpg", alt: "CAKA GELİNLERİ (21)", title: "CAKA GELİNLERİ (21)" },
+  { id: 22, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (22).jpg", alt: "CAKA GELİNLERİ (22)", title: "CAKA GELİNLERİ (22)" },
+  { id: 23, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (23).jpg", alt: "CAKA GELİNLERİ (23)", title: "CAKA GELİNLERİ (23)" },
+  { id: 24, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (24).jpg", alt: "CAKA GELİNLERİ (24)", title: "CAKA GELİNLERİ (24)" },
+  { id: 25, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (25).jpg", alt: "CAKA GELİNLERİ (25)", title: "CAKA GELİNLERİ (25)" },
+  { id: 26, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (26).jpg", alt: "CAKA GELİNLERİ (26)", title: "CAKA GELİNLERİ (26)" },
+  { id: 27, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (27).jpg", alt: "CAKA GELİNLERİ (27)", title: "CAKA GELİNLERİ (27)" },
+  { id: 28, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (28).jpg", alt: "CAKA GELİNLERİ (28)", title: "CAKA GELİNLERİ (28)" },
+  { id: 29, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (29).jpg", alt: "CAKA GELİNLERİ (29)", title: "CAKA GELİNLERİ (29)" },
+  { id: 30, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (30).jpg", alt: "CAKA GELİNLERİ (30)", title: "CAKA GELİNLERİ (30)" },
+  { id: 31, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (31).jpg", alt: "CAKA GELİNLERİ (31)", title: "CAKA GELİNLERİ (31)" },
+  { id: 32, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (32).jpg", alt: "CAKA GELİNLERİ (32)", title: "CAKA GELİNLERİ (32)" },
+  { id: 33, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (33).jpg", alt: "CAKA GELİNLERİ (33)", title: "CAKA GELİNLERİ (33)" },
+  { id: 34, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (34).jpg", alt: "CAKA GELİNLERİ (34)", title: "CAKA GELİNLERİ (34)" },
+  { id: 35, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (35).jpg", alt: "CAKA GELİNLERİ (35)", title: "CAKA GELİNLERİ (35)" },
+  { id: 36, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (36).jpg", alt: "CAKA GELİNLERİ (36)", title: "CAKA GELİNLERİ (36)" },
+  { id: 37, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (37).jpg", alt: "CAKA GELİNLERİ (37)", title: "CAKA GELİNLERİ (37)" },
+  { id: 38, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (38).jpg", alt: "CAKA GELİNLERİ (38)", title: "CAKA GELİNLERİ (38)" },
+  { id: 39, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (39).jpg", alt: "CAKA GELİNLERİ (39)", title: "CAKA GELİNLERİ (39)" },
+  { id: 40, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (40).jpg", alt: "CAKA GELİNLERİ (40)", title: "CAKA GELİNLERİ (40)" },
+  { id: 41, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (41).jpg", alt: "CAKA GELİNLERİ (41)", title: "CAKA GELİNLERİ (41)" },
+  { id: 42, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (42).jpg", alt: "CAKA GELİNLERİ (42)", title: "CAKA GELİNLERİ (42)" },
+  { id: 43, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (43).jpg", alt: "CAKA GELİNLERİ (43)", title: "CAKA GELİNLERİ (43)" },
+  { id: 44, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (44).jpg", alt: "CAKA GELİNLERİ (44)", title: "CAKA GELİNLERİ (44)" },
+  { id: 45, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (45).jpg", alt: "CAKA GELİNLERİ (45)", title: "CAKA GELİNLERİ (45)" },
+  { id: 46, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (46).jpg", alt: "CAKA GELİNLERİ (46)", title: "CAKA GELİNLERİ (46)" },
+];
 
 export default function GelinSacModelleriPage() {
   return (
@@ -47,20 +90,14 @@ export default function GelinSacModelleriPage() {
                   <div className="group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-200 hover:border-pink-300 transition-all duration-300 hover:shadow-xl hover:scale-105">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                     
-                    {/* Placeholder - Gerçek görseller için */}
-                    <div className="w-full h-full bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white text-lg font-bold">
-                          {model.id}
-                        </div>
-                        <div className="text-gray-600 font-medium text-sm">
-                          {model.title}
-                        </div>
-                        <div className="text-xs text-gray-500 mt-1">
-                          JPG Format
-                        </div>
-                      </div>
-                    </div>
+                    {/* Gerçek görsel */}
+                    <Image
+                      src={model.src}
+                      alt={model.alt}
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
 
                     {/* Hover overlay */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
