@@ -1,27 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
     const { to, subject, html } = await request.json();
 
-    // E-posta gönder
-    const { data, error } = await resend.emails.send({
-      from: 'CAKA Kuaför <noreply@caka.tr>',
-      to: [to],
-      subject: subject,
-      html: html,
+    // E-posta transporter'ı oluştur
+    const transporter = nodemailer.createTransport({
+      service: 'hotmail',
+      auth: {
+        user: process.env.EMAIL_USER, // Hotmail adresiniz
+        pass: process.env.EMAIL_PASS, // Hotmail şifresi
+      },
     });
 
-    if (error) {
-      console.error('Resend hatası:', error);
-      return NextResponse.json(
-        { success: false, message: 'E-posta gönderilirken bir hata oluştu' },
-        { status: 500 }
-      );
-    }
+    // E-posta gönder
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: to,
+      subject: subject,
+      html: html,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: true, message: 'E-posta başarıyla gönderildi' });
   } catch (error) {
