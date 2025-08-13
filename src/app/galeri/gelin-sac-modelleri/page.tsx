@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { HeartIcon } from "@/components/Icons";
@@ -8,59 +11,53 @@ export const metadata = {
   description: "Muhteşem gelin saç modelleri galerimizi keşfedin. 46 farklı tasarım ile gelinleriniz için en mükemmel saç modelini seçin.",
 };
 
-// 46 gelin saç modeli görseli için array - gerçek dosya isimleri
-const GELIN_SAC_MODELLERI = [
-  { id: 1, src: "/gelin-sac-modelleri/1.jpg", alt: "Gelin Saç Modeli 1", title: "Gelin Saç Modeli 1" },
-  { id: 2, src: "/gelin-sac-modelleri/2.jpg", alt: "Gelin Saç Modeli 2", title: "Gelin Saç Modeli 2" },
-  { id: 3, src: "/gelin-sac-modelleri/3.jpg", alt: "Gelin Saç Modeli 3", title: "Gelin Saç Modeli 3" },
-  { id: 4, src: "/gelin-sac-modelleri/4.jpg", alt: "Gelin Saç Modeli 4", title: "Gelin Saç Modeli 4" },
-  { id: 5, src: "/gelin-sac-modelleri/5.jpg", alt: "Gelin Saç Modeli 5", title: "Gelin Saç Modeli 5" },
-  { id: 6, src: "/gelin-sac-modelleri/6.jpg", alt: "Gelin Saç Modeli 6", title: "Gelin Saç Modeli 6" },
-  { id: 7, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (7).jpg", alt: "CAKA GELİNLERİ (7)", title: "CAKA GELİNLERİ (7)" },
-  { id: 8, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (8).jpg", alt: "CAKA GELİNLERİ (8)", title: "CAKA GELİNLERİ (8)" },
-  { id: 9, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (9).jpg", alt: "CAKA GELİNLERİ (9)", title: "CAKA GELİNLERİ (9)" },
-  { id: 10, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (10).jpg", alt: "CAKA GELİNLERİ (10)", title: "CAKA GELİNLERİ (10)" },
-  { id: 11, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (11).jpg", alt: "CAKA GELİNLERİ (11)", title: "CAKA GELİNLERİ (11)" },
-  { id: 12, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (12).jpg", alt: "CAKA GELİNLERİ (12)", title: "CAKA GELİNLERİ (12)" },
-  { id: 13, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (13).jpg", alt: "CAKA GELİNLERİ (13)", title: "CAKA GELİNLERİ (13)" },
-  { id: 14, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (14).jpg", alt: "CAKA GELİNLERİ (14)", title: "CAKA GELİNLERİ (14)" },
-  { id: 15, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (15).jpg", alt: "CAKA GELİNLERİ (15)", title: "CAKA GELİNLERİ (15)" },
-  { id: 16, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (16).jpg", alt: "CAKA GELİNLERİ (16)", title: "CAKA GELİNLERİ (16)" },
-  { id: 17, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (17).jpg", alt: "CAKA GELİNLERİ (17)", title: "CAKA GELİNLERİ (17)" },
-  { id: 18, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (18).jpg", alt: "CAKA GELİNLERİ (18)", title: "CAKA GELİNLERİ (18)" },
-  { id: 19, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (19).jpg", alt: "CAKA GELİNLERİ (19)", title: "CAKA GELİNLERİ (19)" },
-  { id: 20, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (20).jpg", alt: "CAKA GELİNLERİ (20)", title: "CAKA GELİNLERİ (20)" },
-  { id: 21, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (21).jpg", alt: "CAKA GELİNLERİ (21)", title: "CAKA GELİNLERİ (21)" },
-  { id: 22, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (22).jpg", alt: "CAKA GELİNLERİ (22)", title: "CAKA GELİNLERİ (22)" },
-  { id: 23, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (23).jpg", alt: "CAKA GELİNLERİ (23)", title: "CAKA GELİNLERİ (23)" },
-  { id: 24, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (24).jpg", alt: "CAKA GELİNLERİ (24)", title: "CAKA GELİNLERİ (24)" },
-  { id: 25, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (25).jpg", alt: "CAKA GELİNLERİ (25)", title: "CAKA GELİNLERİ (25)" },
-  { id: 26, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (26).jpg", alt: "CAKA GELİNLERİ (26)", title: "CAKA GELİNLERİ (26)" },
-  { id: 27, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (27).jpg", alt: "CAKA GELİNLERİ (27)", title: "CAKA GELİNLERİ (27)" },
-  { id: 28, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (28).jpg", alt: "CAKA GELİNLERİ (28)", title: "CAKA GELİNLERİ (28)" },
-  { id: 29, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (29).jpg", alt: "CAKA GELİNLERİ (29)", title: "CAKA GELİNLERİ (29)" },
-  { id: 30, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (30).jpg", alt: "CAKA GELİNLERİ (30)", title: "CAKA GELİNLERİ (30)" },
-  { id: 31, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (31).jpg", alt: "CAKA GELİNLERİ (31)", title: "CAKA GELİNLERİ (31)" },
-  { id: 32, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (32).jpg", alt: "CAKA GELİNLERİ (32)", title: "CAKA GELİNLERİ (32)" },
-  { id: 33, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (33).jpg", alt: "CAKA GELİNLERİ (33)", title: "CAKA GELİNLERİ (33)" },
-  { id: 34, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (34).jpg", alt: "CAKA GELİNLERİ (34)", title: "CAKA GELİNLERİ (34)" },
-  { id: 35, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (35).jpg", alt: "CAKA GELİNLERİ (35)", title: "CAKA GELİNLERİ (35)" },
-  { id: 36, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (36).jpg", alt: "CAKA GELİNLERİ (36)", title: "CAKA GELİNLERİ (36)" },
-  { id: 37, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (37).jpg", alt: "CAKA GELİNLERİ (37)", title: "CAKA GELİNLERİ (37)" },
-  { id: 38, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (38).jpg", alt: "CAKA GELİNLERİ (38)", title: "CAKA GELİNLERİ (38)" },
-  { id: 39, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (39).jpg", alt: "CAKA GELİNLERİ (39)", title: "CAKA GELİNLERİ (39)" },
-  { id: 40, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (40).jpg", alt: "CAKA GELİNLERİ (40)", title: "CAKA GELİNLERİ (40)" },
-  { id: 41, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (41).jpg", alt: "CAKA GELİNLERİ (41)", title: "CAKA GELİNLERİ (41)" },
-  { id: 42, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (42).jpg", alt: "CAKA GELİNLERİ (42)", title: "CAKA GELİNLERİ (42)" },
-  { id: 43, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (43).jpg", alt: "CAKA GELİNLERİ (43)", title: "CAKA GELİNLERİ (43)" },
-  { id: 44, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (44).jpg", alt: "CAKA GELİNLERİ (44)", title: "CAKA GELİNLERİ (44)" },
-  { id: 45, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (45).jpg", alt: "CAKA GELİNLERİ (45)", title: "CAKA GELİNLERİ (45)" },
-  { id: 46, src: "/gelin-sac-modelleri/CAKA GELİNLERİ (46).jpg", alt: "CAKA GELİNLERİ (46)", title: "CAKA GELİNLERİ (46)" },
-];
+// 46 gelin saç modeli görseli için array - yeni dosya isimleri
+const GELIN_SAC_MODELLERI = Array.from({ length: 46 }, (_, i) => ({
+  id: i + 1,
+  src: `/gelin-sac-modelleri/${i + 1}.jpg`,
+  alt: `Gelin Saç Modeli ${i + 1}`,
+  title: `Gelin Saç Modeli ${i + 1}`,
+}));
 
 export default function GelinSacModelleriPage() {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => {
+    setSelectedImage(index);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  const nextImage = () => {
+    if (selectedImage !== null) {
+      setSelectedImage((selectedImage + 1) % GELIN_SAC_MODELLERI.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedImage !== null) {
+      setSelectedImage(selectedImage === 0 ? GELIN_SAC_MODELLERI.length - 1 : selectedImage - 1);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (selectedImage !== null) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextImage();
+      } else if (e.key === 'ArrowLeft') {
+        prevImage();
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen pt-20 md:pt-24">
+    <div className="min-h-screen pt-20 md:pt-24" onKeyDown={handleKeyDown} tabIndex={0}>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-pink-50 via-white to-purple-50 py-16 sm:py-20">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -87,9 +84,10 @@ export default function GelinSacModelleriPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
               {GELIN_SAC_MODELLERI.map((model, index) => (
                 <Reveal key={model.id} delayMs={index * 50}>
-                  <div className="group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-200 hover:border-pink-300 transition-all duration-300 hover:shadow-xl hover:scale-105">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                    
+                  <div 
+                    className="group relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-gray-200 hover:border-pink-300 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer"
+                    onClick={() => openLightbox(index)}
+                  >
                     {/* Gerçek görsel */}
                     <Image
                       src={model.src}
@@ -98,18 +96,6 @@ export default function GelinSacModelleriPage() {
                       height={300}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 text-center">
-                        <div className="text-pink-600 font-semibold text-sm">
-                          {model.title}
-                        </div>
-                        <div className="text-xs text-gray-600 mt-1">
-                          Detayları Gör
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -117,6 +103,63 @@ export default function GelinSacModelleriPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Lightbox */}
+      {selectedImage !== null && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-4xl max-h-full">
+            {/* Close button */}
+            <button
+              onClick={closeLightbox}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Main image */}
+            <div className="relative">
+              <Image
+                src={GELIN_SAC_MODELLERI[selectedImage].src}
+                alt={GELIN_SAC_MODELLERI[selectedImage].alt}
+                width={800}
+                height={800}
+                className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              />
+            </div>
+
+            {/* Navigation buttons */}
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-colors backdrop-blur-sm"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-3 transition-colors backdrop-blur-sm"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Image counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full backdrop-blur-sm">
+              {selectedImage + 1} / {GELIN_SAC_MODELLERI.length}
+            </div>
+
+            {/* Image title */}
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full backdrop-blur-sm">
+              {GELIN_SAC_MODELLERI[selectedImage].title}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Call to Action */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-pink-500 to-purple-500">
