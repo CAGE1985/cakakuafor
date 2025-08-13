@@ -115,7 +115,7 @@ export default function SalonumuzPage() {
                 controls
                 poster="/salonumuz/video-poster.jpg"
               >
-                <source src="/salonumuz/salon-video.mp4" type="video/mp4" />
+                <source src="https://video.wixstatic.com/video/5572e1_bf0f901e18f6470f9f3a95bc7f4156e3/1080p/mp4/file.mp4" type="video/mp4" />
                 Tarayıcınız video oynatmayı desteklemiyor.
               </video>
               
