@@ -32,10 +32,10 @@ const YOUTUBE_VIDEOS = [
     thumbnail: "https://img.youtube.com/vi/LfS3S-9a1KI/maxresdefault.jpg"
   },
   {
-    id: "j4Gsw5OfnRE",
-    title: "29 Ekim Cumhuriyet Bayramı - CAKA Kuaför",
-    description: "29 Ekim Cumhuriyet Bayramı özel çalışmalarımız",
-    thumbnail: "/videolar/cumhuriyet-bayrami-placeholder.jpg"
+    id: "y2_Tuu3_-oM",
+    title: "SALONUMUZ - CAKA Kuaför",
+    description: "CAKA Kuaför salonumuzun tanıtım videosu",
+    thumbnail: "https://img.youtube.com/vi/y2_Tuu3_-oM/maxresdefault.jpg"
   }
 ];
 
@@ -127,13 +127,13 @@ export default function VideolarPage() {
                   <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     {/* Video Thumbnail */}
                     <div className="relative aspect-video bg-gray-200 overflow-hidden">
-                      {video.id === "j4Gsw5OfnRE" ? (
-                        // Cumhuriyet Bayramı için özel placeholder
-                        <div className="w-full h-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                      {video.id === "y2_Tuu3_-oM" ? (
+                        // Salonumuz için özel placeholder
+                        <div className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
                           <div className="text-center text-white">
-                            <div className="text-4xl mb-2">🇹🇷</div>
-                            <div className="text-lg font-bold">29 Ekim</div>
-                            <div className="text-sm">Cumhuriyet Bayramı</div>
+                            <div className="text-4xl mb-2">💈</div>
+                            <div className="text-lg font-bold">Salonumuz</div>
+                            <div className="text-sm">Tanıtım Videosu</div>
                           </div>
                         </div>
                       ) : (
