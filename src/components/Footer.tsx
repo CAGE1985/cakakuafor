@@ -19,7 +19,7 @@ export default function Footer() {
               <li><Link href="/fiyat-listesi" className="hover:text-black">Fiyat Listesi</Link></li>
               <li><Link href="/mikro-kaynak" className="hover:text-black">Mikro Kaynak</Link></li>
               <li><Link href="/anket" className="hover:text-black">Anket</Link></li>
-              <li><Link href="/bize-ulasin" className="hover:text-black">Bize Ulaşın</Link></li>
+              <li><Link href="/bizeulasin" className="hover:text-black">Bize Ulaşın</Link></li>
             </ul>
           </div>
           <div>
