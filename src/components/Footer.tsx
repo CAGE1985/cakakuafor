@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-white border-t border-black/10 text-black">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-12">
@@ -12,14 +16,14 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-black/90">Menü</h3>
+            <h3 className="text-sm font-semibold text-black/90">{t('footer.menu')}</h3>
             <ul className="mt-3 space-y-2 text-sm text-black/70">
-              <li><Link href="/hakkimizda" className="hover:text-black">Hakkımızda</Link></li>
-              <li><Link href="/ekibimiz" className="hover:text-black">Ekibimiz</Link></li>
-              <li><Link href="/fiyat-listesi" className="hover:text-black">Fiyat Listesi</Link></li>
-              <li><Link href="/mikro-kaynak" className="hover:text-black">Mikro Kaynak</Link></li>
-              <li><Link href="/anket" className="hover:text-black">Anket</Link></li>
-              <li><Link href="/bizeulasin" className="hover:text-black">Bize Ulaşın</Link></li>
+              <li><Link href="/hakkimizda" className="hover:text-black">{t('navigation.about')}</Link></li>
+              <li><Link href="/ekibimiz" className="hover:text-black">{t('navigation.team')}</Link></li>
+              <li><Link href="/fiyat-listesi" className="hover:text-black">{t('navigation.prices')}</Link></li>
+              <li><Link href="/mikrokaynak" className="hover:text-black">{t('navigation.microKaynak')}</Link></li>
+              <li><Link href="/anket" className="hover:text-black">{t('navigation.survey')}</Link></li>
+              <li><Link href="/bizeulasin" className="hover:text-black">{t('navigation.contact')}</Link></li>
             </ul>
           </div>
           <div>
@@ -27,7 +31,7 @@ export default function Footer() {
               <svg className="w-5 h-5 text-black/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              İletişim
+              {t('footer.contact')}
             </h3>
             <ul className="mt-3 space-y-3 text-sm text-black/70">
               <li className="flex items-center gap-3">
@@ -50,27 +54,27 @@ export default function Footer() {
               <svg className="w-5 h-5 text-black/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Çalışma Saatleri
+              {t('footer.workingHours')}
             </h3>
             <ul className="mt-3 space-y-3 text-sm text-black/70">
               <li className="flex items-center gap-3">
                 <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Salı-Cmt: 09:00 - 19:00</span>
+                <span>{t('footer.tuesdaySaturday')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-4 h-4 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
-                <span>Pazar-Pazartesi: Kapalı</span>
+                <span>{t('footer.sundayMonday')}</span>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-10 border-t border-black/10 pt-6 text-xs text-black/60">
           <p className="flex items-center gap-2">
-            <span>© Caka Kuaför Tüm hakları saklıdır.</span>
+            <span>{t('footer.copyright')}</span>
             <a 
               href="https://wa.me/905416311158" 
               target="_blank" 
@@ -80,7 +84,7 @@ export default function Footer() {
               <svg className="w-4 h-4 text-black/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
-              Tasarım Murat KOCATAŞ
+              {t('footer.design')}
             </a>
           </p>
         </div>

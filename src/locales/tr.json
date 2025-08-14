@@ -1,0 +1,580 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "team": "Ekibimiz",
+    "prices": "Fiyat Listesi",
+    "microKaynak": "Mikro Kaynak",
+    "gallery": "Galeri",
+    "survey": "Anket",
+    "contact": "Bize Ulaşın",
+    "menu": "Menü",
+    "close": "Kapat"
+  },
+  "mobileMenu": {
+    "home": {
+      "title": "Ana Sayfa",
+      "subtitle": "Giriş ekranı"
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "subtitle": "Hikayemiz"
+    },
+    "team": {
+      "title": "Ekibimiz",
+      "subtitle": "Kadromuz"
+    },
+    "prices": {
+      "title": "Fiyat Listesi",
+      "subtitle": "Güncel tarifeler"
+    },
+    "microKaynak": {
+      "title": "Mikro Kaynak",
+      "subtitle": "Saç Uzatma"
+    },
+    "gallery": {
+      "title": "Galeri",
+      "subtitle": "Çalışmalarımız"
+    },
+    "survey": {
+      "title": "Anket",
+      "subtitle": "Görüşleriniz"
+    },
+    "contact": {
+      "title": "Bize Ulaşın",
+      "subtitle": "İletişim"
+    },
+    "contactChannels": "İletişim Kanalları",
+    "call": "Ara",
+    "location": "Konum"
+  },
+  "home": {
+    "hero": {
+      "title": "CAKA Kuaför",
+      "subtitle": "Profesyonel Saç ve Makyaj Hizmetleri"
+    },
+    "stats": {
+      "title": "Rakamlarla CAKA",
+      "subtitle": "Başarılarımız ve Deneyimimiz",
+      "experience": "Yıllık Deneyim",
+      "customers": "Her ay Mutlu Müşteri",
+      "services": "Kişilik Ekip",
+      "awards": "Ödül"
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "subtitle": "CAKA HAIR & MAKEUP STUDIO",
+      "description": "CAKA Kuaför olarak, müşterilerimizin güzellik ve güven ihtiyaçlarını karşılamak için en son teknolojileri ve teknikleri kullanarak kaliteli hizmet sunuyoruz. Deneyimli ekibimizle sizlere unutulmaz bir deneyim yaşatmayı hedefliyoruz.",
+      "moreInfo": "Daha Fazla Bilgi",
+      "vision": {
+        "title": "Vizyonumuz",
+        "description": "Türkiye'nin en iyi hizmet sunan kuaförü olmak ve müşterilerimizin beklentilerini her zaman aşmak."
+      },
+      "mission": {
+        "title": "Misyonumuz",
+        "description": "Müşterilerimizin beklentilerini karşılamak ve ötesine geçmek için sürdürülebilir, kaliteli ve özenli hizmetler sunmak."
+      }
+    },
+    "services": {
+      "title": "Hizmetlerimiz",
+      "subtitle": "Sunduğumuz Profesyonel Hizmetler",
+      "haircut": {
+        "title": "Saç Kesimi & Şekillendirme",
+        "description": "Profesyonel saç kesimi ve şekillendirme hizmetleri"
+      },
+      "coloring": {
+        "title": "Saç Boyama",
+        "description": "Modern boyama teknikleri ile doğal ve canlı renkler"
+      },
+      "microResource": {
+        "title": "Mikro Kaynak",
+        "description": "Doğal görünümlü saç uzatma ve ekleme işlemleri"
+      },
+      "bridal": {
+        "title": "Gelin Saçı",
+        "description": "Özel günleriniz için unutulmaz gelin saçı tasarımları"
+      },
+      "makeup": {
+        "title": "Make-Up",
+        "description": "Profesyonel makyaj ve güzellik hizmetleri"
+      },
+      "hairCare": {
+        "title": "Saç Bakımı",
+        "description": "Saçlarınızın sağlığı için özel bakım uygulamaları"
+      }
+    },
+    "values": {
+      "title": "Değerler & İlkeler",
+      "subtitle": "Çalışma Prensiplerimiz",
+      "principles": [
+        "Müşterilerimize saygı ve sevgi ile yaklaşmak",
+        "Müşterilerimize değerli olduğunu hissettirmek için duyarlı davranmak",
+        "Müşterilerimizi dinlemek, onları anlamak ve empati ile yaklaşmak",
+        "Müşterilerimiz ile pozitif iletişim kurmak",
+        "Müşterilerimizi, güler yüz, samimiyet ve ilgiyle karşılamak ve uğurlamak",
+        "İş ortamında ekip olarak, işbirliği, yardımlaşma, sorumluluk, sevgi, saygı, işi sahiplenme, empati, hoşgörü ve ekip ruhu ile çalışmak"
+      ]
+    },
+    "promises": {
+      "title": "CAKA Kuaför Çalışanı Olarak Sözümüzdür",
+      "subtitle": "Profesyonel Taahhütlerimiz",
+      "list": [
+        "İşi severek yapmak",
+        "Ekip arkadaşlarımıza ve müşterilere saygı",
+        "Ekip içinde işbirliği ve yardımlaşma",
+        "Bilgiyi paylaşmak",
+        "Müşterilerimizin mutluluğunu sağlamak",
+        "İşimizi, özen ve duyarlılıkla yapmak",
+        "Tam sorumluluk anlayışı ile çalışmak",
+        "İşimizi sahiplenmek",
+        "Kendimizi sürdürülebilir şekilde geliştirmek",
+        "Müşterilerimize ve ekip arkadaşlarımıza karşı nezaketli davranmak",
+        "Hoşgörülü ve alçakgönüllü olmak",
+        "Müşterilerimiz ve ekip arkadaşlarımızla olumlu tavır içinde tatlı dille konuşmak",
+        "İşimizi samimiyetle yapmak",
+        "Örnek iş ahlâkı ile çalışmak",
+        "Müşterilerimize ve ekip arkadaşlarımıza empati göstererek davranmak",
+        "Müşterilerimizi ve ekip arkadaşlarımızı anlamak için etkili ve aktif dinlemek",
+        "İşi heyecan duyarak yapmak",
+        "Kişisel hijyene ve iş ortamı temizliğine özen göstermek",
+        "Kişisel bütünlüğü sergilemek söz ve davranışları tutarlı olmak",
+        "Geribildirimlere açık olmak ve olumsuz geribildirimleri gelişim fırsatı görmek",
+        "Mesleki performansı artırmak ve gelişmek için öğrenmeye açık olmak"
+      ]
+    },
+    "cta": {
+      "title": "Hemen Randevu Alın",
+      "description": "Güzelliğinizi ortaya çıkarmak için profesyonel ekibimizle tanışın",
+      "callButton": "Hemen Ara",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Hakkımızda",
+      "subtitle": "CAKA HAIR & MAKEUP STUDIO",
+      "description": "2007 yılından bu yana enerjimizi ve yeteneklerimizi tek bir konuya odakladık; güzellik. Müşterilerimizin güzelliği, mutluluğu ve doğru işlemi en iyi fiyatlara almaları için varız."
+    },
+    "stats": {
+      "title": "Başarılarımız ve Deneyimimiz",
+      "subtitle": "Yılların deneyimi ve binlerce mutlu müşteri"
+    },
+    "story": {
+      "title": "Hikayemiz",
+      "subtitle": "2007'den Bugüne",
+      "paragraph1": "2007 yılında Antalya'da küçük bir kuaför salonu olarak başladığımız yolculuğumuzda, bugün Türkiye'nin önde gelen kuaför zincirlerinden biri haline geldik.",
+      "paragraph2": "Dürüstlük, tutku, saygınlık, sorumluluk, çalışkanlık, kişiye özel hizmet, ürün ve hizmet kalitesi, müşteri memnuniyeti, çevreye ve doğaya saygı önceliklerimizdir.",
+      "paragraph3": "Her müşterimizin benzersiz olduğuna inanıyor ve her birine özel yaklaşım sergiliyoruz. Amacımız sadece saç kesmek değil, güzelliğinizi ortaya çıkarmak ve kendinizi harika hissetmenizi sağlamak."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "description": "Türkiye'nin en iyi hizmet sunan kuaförü olmak ve müşterilerimizin beklentilerini her zaman aşmak."
+    },
+    "mission": {
+      "title": "Misyonumuz",
+      "description": "Müşterilerimizin beklentilerini karşılamak ve ötesine geçmek için sürdürülebilir, kaliteli ve özenli hizmetler sunmak."
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "subtitle": "Çalışma Prensiplerimiz",
+      "honesty": {
+        "title": "Dürüstlük",
+        "description": "Her işlemde şeffaf ve dürüst yaklaşım sergiliyoruz."
+      },
+      "quality": {
+        "title": "Kalite",
+        "description": "En yüksek kalitede hizmet ve ürünler sunuyoruz."
+      },
+      "customerFocus": {
+        "title": "Müşteri Odaklılık",
+        "description": "Müşteri memnuniyeti bizim önceliğimizdir."
+      },
+      "innovation": {
+        "title": "Yenilikçilik",
+        "description": "En son teknikleri ve trendleri takip ediyoruz."
+      },
+      "sustainability": {
+        "title": "Sürdürülebilirlik",
+        "description": "Çevreye ve doğaya saygılı yaklaşım sergiliyoruz."
+      },
+      "teamwork": {
+        "title": "Ekip Ruhu",
+        "description": "Güçlü ekip çalışması ile hizmet veriyoruz."
+      }
+    },
+    "team": {
+      "title": "Ekibimiz",
+      "subtitle": "Profesyonel Kadromuz",
+      "description1": "Deneyimli ve uzman ekibimiz, her müşterimizin ihtiyaçlarını anlayarak en uygun çözümleri sunmaktadır.",
+      "description2": "16+ kişilik profesyonel kadromuz, sürekli eğitimler alarak en güncel teknikleri ve trendleri takip etmektedir.",
+      "description3": "Her ekip üyemiz, müşteri memnuniyetini en üst seviyede tutmak için titizlikle çalışmaktadır.",
+      "meetTeam": "Ekibimizi Tanıyın",
+      "founder": {
+        "name": "Tarık ULUDAĞ",
+        "title": "Kurucu",
+        "description": "2007 yılından bu yana kuaförlük sektöründe faaliyet gösteren Tarık ULUDAĞ, CAKA Kuaför'ün kurucusu ve baş kuaförüdür. Deneyimi ve uzmanlığı ile müşterilerine en kaliteli hizmeti sunmaktadır."
+      }
+    },
+    "services": {
+      "title": "Hizmetlerimiz",
+      "subtitle": "Sunduğumuz profesyonel kuaförlük hizmetleri",
+      "haircut": "Saç Kesimi",
+      "coloring": "Saç Boyama",
+      "microResource": "Mikro Kaynak",
+      "bridal": "Gelin Saçı",
+      "makeup": "Make-Up",
+      "hairCare": "Saç Bakımı",
+      "skinCare": "Cilt Bakımı",
+      "makeupService": "Makyaj"
+    },
+    "cta": {
+      "title": "Hemen Randevu Alın",
+      "description": "Profesyonel ekibimizle tanışın ve güzelliğinizi ortaya çıkarın",
+      "callButton": "Hemen Ara",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Bize Ulaşın",
+      "subtitle": "İletişim Bilgileri",
+      "description": "Randevu almak, bilgi edinmek veya herhangi bir sorunuz için bizimle iletişime geçebilirsiniz. Size en kısa sürede dönüş yapacağız."
+    },
+    "channels": {
+      "title": "İletişim Kanalları",
+      "subtitle": "Size en uygun iletişim yöntemini seçin",
+      "phone": {
+        "title": "Telefon",
+        "description": "Hızlı randevu ve bilgi için"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Hızlı mesajlaşma"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Sosyal medya"
+      },
+      "facebook": {
+        "title": "Facebook",
+        "description": "Sosyal medya"
+      }
+    },
+    "address": {
+      "title": "Adres & Konum",
+      "subtitle": "Salonumuzu kolayca bulabilirsiniz",
+      "addressTitle": "Adres",
+      "address": "Caka Kuaför, Şirinyalı, İsmet Gökşen Cd., 07160 Muratpaşa/Antalya",
+      "workingHours": {
+        "title": "Çalışma Saatleri",
+        "schedule": "Salı - Cumartesi: 09:00 - 19:00",
+        "closed": "Pazar - Pazartesi: Kapalı"
+      },
+      "appointment": {
+        "title": "Randevu",
+        "description": "Randevu almak için telefon veya WhatsApp'tan iletişime geçebilirsiniz."
+      },
+      "map": {
+        "title": "Harita",
+        "getDirections": "Yol Tarifi Al"
+      }
+    },
+    "directions": {
+      "title": "Adres Tarifi",
+      "subtitle": "Salonumuzu kolayca bulabilmeniz için detaylı yön tarifi",
+      "konyaalti": {
+        "title": "Konyaaltı Yönünden",
+        "description": "Akra Barut Oteli geçtikten sonra yolu takip edince karşınıza gelecek ilk trafik lambalarından yaklaşık 150m sonra sol tarafta CAKA Kuaför'ü göreceksiniz."
+      },
+      "lara": {
+        "title": "Lara Yönünden",
+        "description": "Laura AVM'den Akra Barut Otel istikametine devam ederken ikinci trafik lambalarına gelmeden yaklaşık 150m geride, Halk Bankası Lara şubesinin karşısında CAKA Kuaför'ü göreceksiniz."
+      }
+    },
+    "youtube": {
+      "title": "YouTube Kanalımız",
+      "subtitle": "Saç modelleri ve kuaförlük hakkında videolarımızı izleyin",
+      "channelTitle": "CAKA Kuaför YouTube",
+      "description": "Saç modelleri, kuaförlük teknikleri ve güzellik ipuçları hakkında videolarımızı YouTube kanalımızdan takip edebilirsiniz.",
+      "visitChannel": "YouTube Kanalımızı Ziyaret Edin"
+    },
+    "cta": {
+      "title": "Hemen İletişime Geçin",
+      "description": "Randevu almak veya bilgi edinmek için size en uygun iletişim kanalını seçin",
+      "callButton": "Hemen Ara",
+      "whatsappButton": "WhatsApp"
+    },
+    "form": {
+      "title": "Mesaj Gönderin",
+      "subtitle": "Bize mesaj gönderin, en kısa sürede size dönelim",
+      "name": "Adınız",
+      "email": "E-posta Adresiniz",
+      "phone": "Telefon Numaranız",
+      "message": "Mesajınız",
+      "send": "Mesaj Gönder",
+      "sending": "Gönderiliyor...",
+      "success": "Mesajınız başarıyla gönderildi!",
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "team": {
+    "hero": {
+      "title": "Ekibimiz",
+      "subtitle": "Profesyonel Uzmanlarımız",
+      "description": "Deneyimli ve uzman ekibimizle sizlere en kaliteli hizmeti sunuyoruz."
+    }
+  },
+  "prices": {
+    "hero": {
+      "title": "Fiyat Listesi",
+      "description": "Şeffaf ve uygun fiyatlarla profesyonel kuaförlük hizmetleri"
+    },
+    "info": {
+      "title": "Fiyat Bilgileri",
+      "hairLength": {
+        "title": "Saç Uzunluğu",
+        "description": "Kısa, orta ve uzun saç kategorilerine göre fiyatlandırma yapılır."
+      },
+      "currentPrices": {
+        "title": "Güncel Fiyatlar",
+        "description": "Fiyatlarımız düzenli olarak güncellenir ve şeffaf şekilde sunulur."
+      },
+      "expertTeam": {
+        "title": "Uzman Kadro",
+        "description": "Deneyimli ekibimizle kaliteli hizmet garantisi veriyoruz."
+      }
+    },
+    "cta": {
+      "title": "Hemen Randevu Alın",
+      "description": "Fiyatlarımızı incelediniz, şimdi profesyonel hizmetimizi deneyin",
+      "callButton": "Hemen Ara",
+      "whatsappButton": "WhatsApp"
+    },
+    "loading": "Fiyat listesi yükleniyor...",
+    "error": "Fiyat listesi yüklenirken bir hata oluştu.",
+    "note": "💡 Fiyatlar saç uzunluğu ve hizmet detaylarına göre değişebilir. Detaylı bilgi için bizimle iletişime geçin.",
+    "categories": {
+      "haircut": "SAÇ KESİMİ",
+      "coloring": "SAÇ BOYAMA",
+      "haircare": "SAÇ BAKIMI",
+      "makeup": "MAKYAJ",
+      "microResource": "MİKRO KAYNAK",
+      "bridal": "GELİN SAÇI",
+      "skincare": "CİLT BAKIMI"
+    },
+    "services": {
+      "womenHaircut": "Kadın Saç Kesimi",
+      "menHaircut": "Erkek Saç Kesimi",
+      "childrenHaircut": "Çocuk Saç Kesimi",
+      "hairColoring": "Saç Boyama",
+      "hairLightening": "Saç Açma",
+      "hairDarkening": "Saç Koyulaştırma",
+      "hairCare": "Saç Bakımı",
+      "hairWashing": "Saç Yıkama",
+      "hairStyling": "Saç Şekillendirme",
+      "makeup": "Makyaj",
+      "bridalMakeup": "Gelin Makyajı",
+      "microResource": "Mikro Kaynak",
+      "bridalHair": "Gelin Saçı",
+      "skinCare": "Cilt Bakımı",
+      "facialCare": "Yüz Bakımı"
+    },
+    "lengths": {
+      "short": "Kısa",
+      "medium": "Orta",
+      "long": "Uzun",
+      "veryLong": "Çok Uzun"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Galeri",
+      "subtitle": "Çalışmalarımızdan Örnekler",
+      "description": "Profesyonel kuaförlük çalışmalarımızdan seçkin örnekler. Her çalışma benzersiz tasarım ve kaliteli hizmet anlayışımızı yansıtır."
+    },
+    "categories": {
+      "salon": {
+        "title": "Salonumuz",
+        "subtitle": "Modern ve Şık Tasarım",
+        "description": "Salonumuzun modern ve şık tasarımını keşfedin. Müşterilerimizin konforu için özenle tasarlanmış mekanımız."
+      },
+      "videos": {
+        "title": "Videolar",
+        "subtitle": "Çalışmalarımızdan Kareler",
+        "description": "Profesyonel çalışmalarımızdan video kareleri. Saç kesimi, boyama ve makyaj süreçlerimizi izleyin."
+      },
+      "bridal": {
+        "title": "Gelin Saç Modelleri",
+        "subtitle": "46 Muhteşem Tasarım",
+        "description": "En güzel gününüz için özenle seçilmiş 46 farklı gelin saç modeli. Her tasarım hayallerinizi gerçeğe dönüştürür."
+      },
+      "instagram": {
+        "title": "Instagram Paylaşımlarımız",
+        "subtitle": "Güncel Çalışmalar",
+        "description": "Instagram hesabımızdan en güncel çalışmalarımızı takip edin. Yeni trendler ve yaratıcı tasarımlar."
+      },
+      "collection": {
+        "title": "Koleksiyon Çalışmalarımız",
+        "subtitle": "Özel Tasarımlar",
+        "description": "Özel koleksiyon çalışmalarımızı keşfedin. Her tasarım benzersiz ve özgün yaratıcılığımızı yansıtır."
+      },
+      "showcase": {
+        "title": "Vitrin Koleksiyonları",
+        "subtitle": "Sergi Çalışmaları",
+        "description": "Vitrin sergilerimizde yer alan özel koleksiyonlarımızı inceleyin. Yaratıcılığımızın en güzel örnekleri."
+      }
+    },
+    "viewGallery": "Galeriyi Gör",
+    "cta": {
+      "title": "Beğendiğiniz Çalışmayı Seçin",
+      "description": "Galerilerimizde beğendiğiniz çalışmayı seçin ve uzman ekibimizle iletişime geçerek kendi tasarımınızı planlayın.",
+      "callButton": "Hemen Ara",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "microKaynak": {
+    "hero": {
+      "title": "Mikro Kaynak",
+      "subtitle": "Hakkında Tüm Bilgiler",
+      "description": "Mikro Kaynak Hakkında Tüm Bilgilere sahip olacağınız bu sayfamızda, soru-cevap şeklinde hazırladığımız mikro kaynak hakkında sizin için değerli bilgileri dikkatlice okumanızı tavsiye ederiz."
+    },
+    "warning": {
+      "title": "Önemli Uyarı",
+      "description": "Genelde piyasada daha uygun fiyata yapılan ve \"Mikro\" ve \"Medikal Kaynak\" adı altında bahsi geçen çoğu uygulamanın sonucu hüsrandır. Gerçek bir Mikro veya Medikal kaynak uygulamasının fiyatı saç kalitesi, işçilik kalitesi ve yapıştırıcısından dolayı daha yüksektir."
+    },
+    "quality": {
+      "title": "Neden CAKA Kuaför Mikro Kaynak?",
+      "description": "Saçlarınızın zarar görmesini istemiyor ve aynı zamanda kaynak olduğu da belli olmasın istiyorsanız, en son tekniğe sahip mikro kaynak uygulaması tek tercihtir. Biz CAKA Kuaför olarak yapmış olduğumuz tüm uygulamanın her zaman arkasındayız."
+    },
+    "faq": {
+      "title": "Sık Sorulan Sorular",
+      "subtitle": "Mikro kaynak hakkında merak ettiğiniz tüm soruların cevapları",
+      "q1": {
+        "title": "Mikro Kaynak ile Medikal Kaynak Farkı Nedir?",
+        "answer": "Mikro Kaynak ile Medikal Kaynak arasındaki tek fark birleşim noktasının daha ince ve küçük olmasıdır. Medikal kaynak uygulamasını sadece saç toplandığında baş çevresinde görünmelerin yaşanmaması için uygulamayı doğru buluyoruz ve ince telli zayıf saçlarda tercih ediyoruz."
+      },
+      "q2": {
+        "title": "Mikro Kaynak Nasıl Uygulanır?",
+        "answer": "Mikro kaynak sisteminde nakil edilecek saç tutamları 5 tel ve 25 tel olmak kaydı ile saçlara nakil edilir. Bu anlamda birleşim noktası oldukça küçük ve doğaldır.",
+        "detail": "Salonumuzda profesyonel şekilde uygulanmakta olan Mikro Saç Kaynak tekniği dünya üzerinde uygulanan en son saç kaynak tekniklerinden birisidir. İşlem şeffaf kapsül granüllerin ısı ile eritilerek saçlara birleştirilme şeklinde yapılır."
+      },
+      "q3": {
+        "title": "Mikro Kaynak Kimler İçin Uygundur?",
+        "answer": "Saçlarını uzatmak isteyen, saçları zayıf ve az olan, aynı zamanda kimyasal işlemlerden zarar görmüş, yanmış, yıpranmış, dipleri yoğun uçları seyrek ve hacmi az olan tüm saç tipleri için uygundur. Farklı saç tiplerinin tamamına uygulanabilmesi özelliği ile aşırı kısa saça (5 cm olması bile yeterlidir) kaynak yapılabilmektedir."
+      },
+      "q4": {
+        "title": "Mikro Kaynağın Kullanım Süresi Nedir?",
+        "answer": "Kaynak yapıldığı süre boyunca saçlarınızda herhangi bir ağrı ya da acı hissetmezsiniz. Kaynaklarınızdan sıkıldığınız zaman da saçlarınıza hiçbir zarar vermeden çıkartarak eski saçlarınıza kavuşabilirsiniz.",
+        "tip": {
+          "title": "Bizim Tavsiyemiz:",
+          "description": "Minimum 3, maksimum 6 aydır. 3 aydan sonra nakil saçlar diplerden uzaklaşır ve kendi saçlarınızda karışıklıklar oluşmaya başlayacaktır."
+        }
+      },
+      "q5": {
+        "title": "Mikro Kaynak Saça Zarar Verir mi?",
+        "answer": "Dürüst olmak gerekirse PROFESYONEL görüşümüzle bize göre saça zarar vermeyen kaynak çeşidi yoktur. Saçın zarar görmesinin iki temel sebebi vardır: Kullanıcı hatalarından dolayı ve uygulayıcı hatalarından kaynaklı sebeplerdir.",
+        "important": {
+          "title": "Önemli:",
+          "description": "Herhangi bir kaynak sisteminde genel saç kaybı %10 ise, mikro kaynakta doğru saç seçimi, doğru uygulama, doğru kullanım ve doğru söküm işlemi yapıldığı takdirde bu oran %1'e kadar düşmektedir."
+        }
+      },
+      "q6": {
+        "title": "Mikro Kaynağın Avantajları Neler?",
+        "advantage1": "Uygulanan saç tutamları oldukça ince ve hafiftir, kafanızda ağırlık yapmaz ve rahatsız etmez.",
+        "advantage2": "Diğer saç kaynak sistemlerinde olduğu gibi saçınızdan ayrı uyumsuz katlı bir görünüm olmaz, doğal ve bütünlük içinde bir toplam görünüm olur.",
+        "advantage3": "Kullanımı çok kolaydır, size şekillendirmeden zaman kazandırır.",
+        "advantage4": "Diğer saç uzatma sistemlerine göre saçlarınızı diplerden fırça ile fırçalayabilirsiniz.",
+        "advantage5": "Tüm saç tiplerine uygulanabilir, çok kısa saçlarda bile muhteşem sonuçlarla doğal bir görünüm elde edilebilir.",
+        "advantage6": "Mikro kaynak doğru uygulama yapıldığında yanmış saçların tedavisi sürecinde saçların korunmasını ve iyileşme sürecini hızlandırır.",
+        "advantage7": "Doğal saçlar üzerine uyguladığımız mikro kaynak çalışmalarında kimyasal renklendirme işlemlerini nakil saçlar üzerinde uygulamayı tercih ediyoruz."
+      },
+      "q7": {
+        "title": "Mikro Saç Kaynak Kaç Saatte Uygulanıyor?",
+        "answer": "Mikro Kaynak uygulaması uygulanacak adete bağlı değişmektedir. Fakat bir ortalama belirtmek gerekirse renklendirme hariç uygulama süremiz ortalama 2-4 saat arasında değişmektedir."
+      },
+      "q8": {
+        "title": "Mikro Kaynak Saçlar Nasıl Çıkarılır?",
+        "answer": "Uygulanan Mikro Saç kaynakların tavsiye edilen kullanım sonrasında bir profesyonel tarafından mikro kaynak için özel formüle edilmiş çözücü solüsyon ve bir pense yardımıyla çıkarılır. Ardından varsa dolaşma karışmaya karşı etkili özel yumuşatıcı sprey ürün yardımıyla taranarak karışıklıklar açılır."
+      },
+      "q9": {
+        "title": "Mikro Kaynak Saçları Garantili mi?",
+        "answer": "CAKA Kuaför Garantisi: Mikro Kaynak yapılabilen, karışmayan, dolaşmayan, istenilen renk açılıp boyanabilen ve uzun dönem kullanılabilen saçlara ulaşmak çok zordur.",
+        "guarantee": {
+          "title": "Garantimiz:",
+          "description": "Yapmış olduğumuz mikro kaynak uygulamalarında ilke olarak misafirlerimize \"yaşayabileceğiniz herhangi bir sorun bizim sorunumuzdur\" diyebileceğimiz saçları imal edip kullanmayı tercih ediyoruz."
+        }
+      }
+    },
+    "usageGuide": {
+      "title": "Mikro Saç Kaynak Kullanım Rehberi",
+      "subtitle": "Doğru kullanım için önemli ipuçları",
+      "hairWash": {
+        "title": "Saç Yıkama İşlemi Nasıl Olmalı",
+        "step1": "Kaynaklı Saçlar için üretilmiş özel şampuan köpürtünüz.",
+        "step2": "Şampuanı su ile tamamen arındırınız.",
+        "step3": "Kaynaklı Saçlar için üretilmiş özel saç kreminizi uygulayınız. 5 dk krem saçta kalmalı ve akabinde durulayınız.",
+        "step4": "Şampuan ve krem uygulanmış ve arındırılmış saçlarınızı uç kısımlarından başlayarak açarak diplere doğru tarayınız.",
+        "step5": "Havlu ile suyunu aldıktan sonra fön veya vigo ile kurutunuz."
+      }
+    },
+    "cta": {
+      "title": "Mikro Kaynak Fiyatları",
+      "description": "Bunu da saçı görmeden analiz etmeden buradan söylemek doğru olmaz. Dilerseniz ücretsiz bir ön görüşme için randevu alıp bizi ziyaret ettiğinizde net bir fiyat çıkartılacaktır.",
+      "callButton": "Hemen Ara",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "bilgi": {
+    "title": "Hızlı Erişim",
+    "workingHours": {
+      "title": "Çalışma Saatleri",
+      "weekday": "Hafta içi: 09:00 - 19:00",
+      "saturday": "Cumartesi: 09:00 - 19:00"
+    },
+    "warning": "Salonumuz Pazar ve Pazartesi günleri kapalıdır.",
+    "buttons": {
+      "prices": "Fiyat Listesi",
+      "reviews": "Google Yorumlar",
+      "team": "Ekibimiz",
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp",
+      "contact": "İletişim"
+    }
+  },
+  "survey": {
+    "title": "Anket",
+    "hero": {
+      "title": "Müşteri Memnuniyeti Anketi",
+      "subtitle": "Bizi 6 Soruda Değerlendirir misiniz?",
+      "description": "Sizlere daha kaliteli hizmet verebilmek için bize geribildirimde bulunmanızı rica ediyoruz. Anketimiz sadece birkaç dakikanızı alacak ve hizmet kalitemizi artırmamıza yardımcı olacaktır."
+    },
+    "form": {
+      "title": "CAKA Kuaför Müşteri Memnuniyeti Anketi",
+      "subtitle": "Deneyiminizi değerlendirin, hizmetimizi geliştirmemize yardımcı olun",
+      "loading": "Yükleniyor..."
+    },
+    "features": {
+      "fast": {
+        "title": "Hızlı",
+        "description": "Sadece 2-3 dakika"
+      },
+      "secure": {
+        "title": "Güvenli",
+        "description": "Google Forms güvencesi"
+      },
+      "effective": {
+        "title": "Etkili",
+        "description": "Hizmet kalitemizi artırır"
+      }
+    }
+  },
+  "footer": {
+    "menu": "Menü",
+    "contact": "İletişim",
+    "workingHours": "Çalışma Saatleri",
+    "tuesdaySaturday": "Salı-Cmt: 09:00 - 19:00",
+    "sundayMonday": "Pazar-Pazartesi: Kapalı",
+    "copyright": "© Caka Kuaför Tüm hakları saklıdır.",
+    "design": "Tasarım Murat KOCATAŞ"
+  }
+}

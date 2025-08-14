@@ -1,0 +1,580 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "team": "Our Team",
+    "prices": "Price List",
+    "microKaynak": "Micro Hair Extensions",
+    "gallery": "Gallery",
+    "survey": "Survey",
+    "contact": "Contact Us",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "mobileMenu": {
+    "home": {
+      "title": "Home",
+      "subtitle": "Main page"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Our Story"
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Our Staff"
+    },
+    "prices": {
+      "title": "Price List",
+      "subtitle": "Current rates"
+    },
+    "microKaynak": {
+      "title": "Micro Hair Extensions",
+      "subtitle": "Hair Extension"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Our Works"
+    },
+    "survey": {
+      "title": "Survey",
+      "subtitle": "Your Opinions"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Contact"
+    },
+    "contactChannels": "Contact Channels",
+    "call": "Call",
+    "location": "Location"
+  },
+  "home": {
+    "hero": {
+      "title": "CAKA Hair Salon",
+      "subtitle": "Professional Hair and Makeup Services"
+    },
+    "stats": {
+      "title": "CAKA in Numbers",
+      "subtitle": "Our Achievements and Experience",
+      "experience": "Years of Experience",
+      "customers": "Happy Customers per Month",
+      "services": "Team Members",
+      "awards": "Awards"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "CAKA HAIR & MAKEUP STUDIO",
+      "description": "As CAKA Hair Salon, we provide quality services using the latest technologies and techniques to meet our customers' beauty and confidence needs. With our experienced team, we aim to provide you with an unforgettable experience.",
+      "moreInfo": "Learn More",
+      "vision": {
+        "title": "Our Vision",
+        "description": "To be Turkey's best service-providing hair salon and always exceed our customers' expectations."
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "To provide sustainable, quality and careful services to meet and exceed our customers' expectations."
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Professional Services We Offer",
+      "haircut": {
+        "title": "Hair Cutting & Styling",
+        "description": "Professional hair cutting and styling services"
+      },
+      "coloring": {
+        "title": "Hair Coloring",
+        "description": "Natural and vibrant colors with modern coloring techniques"
+      },
+      "microResource": {
+        "title": "Micro Resource",
+        "description": "Natural-looking hair extension and addition procedures"
+      },
+      "bridal": {
+        "title": "Bridal Hair",
+        "description": "Unforgettable bridal hair designs for your special days"
+      },
+      "makeup": {
+        "title": "Make-Up",
+        "description": "Professional makeup and beauty services"
+      },
+      "hairCare": {
+        "title": "Hair Care",
+        "description": "Special care applications for the health of your hair"
+      }
+    },
+    "values": {
+      "title": "Values & Principles",
+      "subtitle": "Our Working Principles",
+      "principles": [
+        "Approaching our customers with respect and love",
+        "Behaving sensitively to make our customers feel valued",
+        "Listening to our customers, understanding them and approaching them with empathy",
+        "Establishing positive communication with our customers",
+        "Welcoming and seeing off our customers with a smile, sincerity and interest",
+        "Working as a team in the work environment with cooperation, mutual help, responsibility, love, respect, ownership of work, empathy, tolerance and team spirit"
+      ]
+    },
+    "promises": {
+      "title": "Our Promise as CAKA Hair Salon Employee",
+      "subtitle": "Our Professional Commitments",
+      "list": [
+        "To do the job with love",
+        "Respect for our teammates and customers",
+        "Cooperation and mutual help within the team",
+        "Sharing knowledge",
+        "Ensuring the happiness of our customers",
+        "Doing our job with care and sensitivity",
+        "Working with full responsibility understanding",
+        "Taking ownership of our work",
+        "Developing ourselves sustainably",
+        "Behaving politely towards our customers and teammates",
+        "Being tolerant and humble",
+        "Speaking sweetly with positive attitude with our customers and teammates",
+        "Doing our job sincerely",
+        "Working with exemplary work ethics",
+        "Behaving with empathy towards our customers and teammates",
+        "Listening effectively and actively to understand our customers and teammates",
+        "Doing the job with excitement",
+        "Paying attention to personal hygiene and workplace cleanliness",
+        "Demonstrating personal integrity, being consistent in words and actions",
+        "Being open to feedback and seeing negative feedback as development opportunities",
+        "Being open to learning to increase and develop professional performance"
+      ]
+    },
+    "cta": {
+      "title": "Make an Appointment Now",
+      "description": "Meet our professional team to bring out your beauty",
+      "callButton": "Call Now",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "CAKA HAIR & MAKEUP STUDIO",
+      "description": "Since 2007, we have focused our energy and talents on one thing: beauty. We exist for our customers to get beauty, happiness and the right treatment at the best prices."
+    },
+    "stats": {
+      "title": "Our Achievements and Experience",
+      "subtitle": "Years of experience and thousands of happy customers"
+    },
+    "story": {
+      "title": "Our Story",
+      "subtitle": "From 2007 to Today",
+      "paragraph1": "In our journey that started as a small hair salon in Antalya in 2007, we have become one of Turkey's leading hair salon chains today.",
+      "paragraph2": "Honesty, passion, dignity, responsibility, hard work, personalized service, product and service quality, customer satisfaction, respect for the environment and nature are our priorities.",
+      "paragraph3": "We believe that each of our customers is unique and we approach each one specially. Our goal is not just to cut hair, but to bring out your beauty and make you feel great."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be Turkey's best service-providing hair salon and always exceed our customers' expectations."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide sustainable, quality and careful services to meet and exceed our customers' expectations."
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "Our Working Principles",
+      "honesty": {
+        "title": "Honesty",
+        "description": "We demonstrate transparent and honest approach in every transaction."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "We provide the highest quality services and products."
+      },
+      "customerFocus": {
+        "title": "Customer Focus",
+        "description": "Customer satisfaction is our priority."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We follow the latest techniques and trends."
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "We demonstrate environmentally and nature-friendly approach."
+      },
+      "teamwork": {
+        "title": "Team Spirit",
+        "description": "We provide service with strong teamwork."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Our Professional Staff",
+      "description1": "Our experienced and expert team provides the most suitable solutions by understanding the needs of each of our customers.",
+      "description2": "Our professional staff of 16+ people follows the latest techniques and trends by receiving continuous training.",
+      "description3": "Each of our team members works meticulously to keep customer satisfaction at the highest level.",
+      "meetTeam": "Meet Our Team",
+      "founder": {
+        "name": "Tarık ULUDAĞ",
+        "title": "Founder",
+        "description": "Tarık ULUDAĞ, who has been operating in the hairdressing sector since 2007, is the founder and head hairdresser of CAKA Hair Salon. He provides the highest quality service to his customers with his experience and expertise."
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Professional hairdressing services we offer",
+      "haircut": "Hair Cutting",
+      "coloring": "Hair Coloring",
+      "microResource": "Micro Resource",
+      "bridal": "Bridal Hair",
+      "makeup": "Make-Up",
+      "hairCare": "Hair Care",
+      "skinCare": "Skin Care",
+      "makeupService": "Makeup"
+    },
+    "cta": {
+      "title": "Make an Appointment Now",
+      "description": "Meet our professional team and bring out your beauty",
+      "callButton": "Call Now",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Contact Information",
+      "description": "You can contact us to make an appointment, get information or for any questions. We will get back to you as soon as possible."
+    },
+    "channels": {
+      "title": "Contact Channels",
+      "subtitle": "Choose the most suitable communication method for you",
+      "phone": {
+        "title": "Phone",
+        "description": "For quick appointment and information"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "description": "Quick messaging"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Social media"
+      },
+      "facebook": {
+        "title": "Facebook",
+        "description": "Social media"
+      }
+    },
+    "address": {
+      "title": "Address & Location",
+      "subtitle": "You can easily find our salon",
+      "addressTitle": "Address",
+      "address": "Caka Hair Salon, Şirinyalı, İsmet Gökşen St., 07160 Muratpaşa/Antalya",
+      "workingHours": {
+        "title": "Working Hours",
+        "schedule": "Tuesday - Saturday: 09:00 - 19:00",
+        "closed": "Sunday - Monday: Closed"
+      },
+      "appointment": {
+        "title": "Appointment",
+        "description": "You can contact us by phone or WhatsApp to make an appointment."
+      },
+      "map": {
+        "title": "Map",
+        "getDirections": "Get Directions"
+      }
+    },
+    "directions": {
+      "title": "Address Directions",
+      "subtitle": "Detailed directions to easily find our salon",
+      "konyaalti": {
+        "title": "From Konyaaltı Direction",
+        "description": "After passing Akra Barut Hotel, follow the road and you will see CAKA Hair Salon on the left side about 150m after the first traffic lights that come in front of you."
+      },
+      "lara": {
+        "title": "From Lara Direction",
+        "description": "While continuing from Laura Mall towards Akra Barut Hotel, you will see CAKA Hair Salon about 150m back before the second traffic lights, opposite the Halk Bank Lara branch."
+      }
+    },
+    "youtube": {
+      "title": "Our YouTube Channel",
+      "subtitle": "Watch our videos about hair models and hairdressing",
+      "channelTitle": "CAKA Hair Salon YouTube",
+      "description": "You can follow our videos about hair models, hairdressing techniques and beauty tips from our YouTube channel.",
+      "visitChannel": "Visit Our YouTube Channel"
+    },
+    "cta": {
+      "title": "Contact Us Now",
+      "description": "Choose the most suitable communication channel for you to make an appointment or get information",
+      "callButton": "Call Now",
+      "whatsappButton": "WhatsApp"
+    },
+    "form": {
+      "title": "Send Message",
+      "subtitle": "Send us a message, we'll get back to you as soon as possible",
+      "name": "Your Name",
+      "email": "Your Email Address",
+      "phone": "Your Phone Number",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "team": {
+    "hero": {
+      "title": "Our Team",
+      "subtitle": "Our Professional Experts",
+      "description": "We provide you with the highest quality service with our experienced and expert team."
+    }
+  },
+  "prices": {
+    "hero": {
+      "title": "Price List",
+      "description": "Professional hairdressing services with transparent and affordable prices"
+    },
+    "info": {
+      "title": "Price Information",
+      "hairLength": {
+        "title": "Hair Length",
+        "description": "Pricing is done according to short, medium and long hair categories."
+      },
+      "currentPrices": {
+        "title": "Current Prices",
+        "description": "Our prices are updated regularly and presented transparently."
+      },
+      "expertTeam": {
+        "title": "Expert Team",
+        "description": "We guarantee quality service with our experienced team."
+      }
+    },
+    "cta": {
+      "title": "Make an Appointment Now",
+      "description": "You've reviewed our prices, now try our professional service",
+      "callButton": "Call Now",
+      "whatsappButton": "WhatsApp"
+    },
+    "loading": "Loading price list...",
+    "error": "An error occurred while loading the price list.",
+    "note": "💡 Prices may vary according to hair length and service details. Contact us for detailed information.",
+    "categories": {
+      "haircut": "HAIR CUTTING",
+      "coloring": "HAIR COLORING",
+      "haircare": "HAIR CARE",
+      "makeup": "MAKEUP",
+      "microResource": "MICRO RESOURCE",
+      "bridal": "BRIDAL HAIR",
+      "skincare": "SKIN CARE"
+    },
+    "services": {
+      "womenHaircut": "Women's Hair Cut",
+      "menHaircut": "Men's Hair Cut",
+      "childrenHaircut": "Children's Hair Cut",
+      "hairColoring": "Hair Coloring",
+      "hairLightening": "Hair Lightening",
+      "hairDarkening": "Hair Darkening",
+      "hairCare": "Hair Care",
+      "hairWashing": "Hair Washing",
+      "hairStyling": "Hair Styling",
+      "makeup": "Makeup",
+      "bridalMakeup": "Bridal Makeup",
+      "microResource": "Micro Resource",
+      "bridalHair": "Bridal Hair",
+      "skinCare": "Skin Care",
+      "facialCare": "Facial Care"
+    },
+    "lengths": {
+      "short": "Short",
+      "medium": "Medium",
+      "long": "Long",
+      "veryLong": "Very Long"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Gallery",
+      "subtitle": "Examples from Our Work",
+      "description": "Selected examples from our professional hairdressing work. Each work reflects our unique design and quality service approach."
+    },
+    "categories": {
+      "salon": {
+        "title": "Our Salon",
+        "subtitle": "Modern and Elegant Design",
+        "description": "Discover the modern and elegant design of our salon. Our space carefully designed for the comfort of our customers."
+      },
+      "videos": {
+        "title": "Videos",
+        "subtitle": "Frames from Our Work",
+        "description": "Video frames from our professional work. Watch our hair cutting, coloring and makeup processes."
+      },
+      "bridal": {
+        "title": "Bridal Hair Models",
+        "subtitle": "46 Magnificent Designs",
+        "description": "46 different bridal hair models carefully selected for your most beautiful day. Each design brings your dreams to life."
+      },
+      "instagram": {
+        "title": "Our Instagram Posts",
+        "subtitle": "Current Work",
+        "description": "Follow our latest work from our Instagram account. New trends and creative designs."
+      },
+      "collection": {
+        "title": "Our Collection Work",
+        "subtitle": "Special Designs",
+        "description": "Discover our special collection work. Each design reflects our unique and original creativity."
+      },
+      "showcase": {
+        "title": "Showcase Collections",
+        "subtitle": "Exhibition Work",
+        "description": "Examine our special collections featured in our showcase exhibitions. The most beautiful examples of our creativity."
+      }
+    },
+    "viewGallery": "View Gallery",
+    "cta": {
+      "title": "Choose the Work You Like",
+      "description": "Choose the work you like in our galleries and contact our expert team to plan your own design.",
+      "callButton": "Call Now",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "microKaynak": {
+    "hero": {
+      "title": "Micro Resource",
+      "subtitle": "All Information About",
+      "description": "On this page where you will have all the information about Micro Resource, we recommend that you carefully read the valuable information we have prepared for you about micro resource in question-answer format."
+    },
+    "warning": {
+      "title": "Important Warning",
+      "description": "Most applications mentioned under the name \"Micro\" and \"Medical Resource\" that are generally done at more affordable prices in the market result in disappointment. The price of a real Micro or Medical resource application is higher due to hair quality, workmanship quality and adhesive."
+    },
+    "quality": {
+      "title": "Why CAKA Hair Salon Micro Resource?",
+      "description": "If you don't want your hair to be damaged and at the same time don't want the resource to be obvious, micro resource application with the latest technique is the only choice. As CAKA Hair Salon, we always stand behind all the applications we have made."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Answers to all your questions about micro resource",
+      "q1": {
+        "title": "What is the Difference Between Micro Resource and Medical Resource?",
+        "answer": "The only difference between Micro Resource and Medical Resource is that the connection point is thinner and smaller. We find the medical resource application correct only to prevent visibility around the head when hair is gathered, and we prefer it in thin, weak hair."
+      },
+      "q2": {
+        "title": "How is Micro Resource Applied?",
+        "answer": "In the micro resource system, hair strands to be transplanted are transplanted to the hair with 5 and 25 strands. In this sense, the connection point is quite small and natural.",
+        "detail": "The Micro Hair Resource technique, which is applied professionally in our salon, is one of the latest hair resource techniques applied in the world. The process is done by melting transparent capsule granules with heat and combining them with hair."
+      },
+      "q3": {
+        "title": "Who is Micro Resource Suitable For?",
+        "answer": "It is suitable for all hair types who want to extend their hair, have weak and sparse hair, and at the same time have been damaged by chemical processes, burned, worn out, with dense roots, sparse ends and low volume. With the feature of being applicable to all different hair types, resource can be made to extremely short hair (even 5 cm is sufficient)."
+      },
+      "q4": {
+        "title": "What is the Usage Period of Micro Resource?",
+        "answer": "You don't feel any pain or discomfort in your hair during the time the resource is made. When you get tired of your resources, you can also remove them without harming your hair and return to your old hair.",
+        "tip": {
+          "title": "Our Recommendation:",
+          "description": "Minimum 3, maximum 6 months. After 3 months, the transplanted hair moves away from the roots and tangles will begin to form in your own hair."
+        }
+      },
+      "q5": {
+        "title": "Does Micro Resource Damage Hair?",
+        "answer": "To be honest, with our PROFESSIONAL opinion, we don't think there is any type of resource that doesn't damage hair. There are two main reasons for hair damage: due to user errors and due to practitioner errors.",
+        "important": {
+          "title": "Important:",
+          "description": "If general hair loss is 10% in any resource system, this rate drops to 1% in micro resource if correct hair selection, correct application, correct use and correct removal process are done."
+        }
+      },
+      "q6": {
+        "title": "What are the Advantages of Micro Resource?",
+        "advantage1": "The applied hair strands are quite thin and light, they don't weigh on your head and don't bother you.",
+        "advantage2": "Unlike other hair resource systems, there is no separate incompatible layered appearance from your hair, it becomes a natural and integrated total appearance.",
+        "advantage3": "It is very easy to use, saves you time from styling.",
+        "advantage4": "Unlike other hair extension systems, you can brush your hair from the roots with a brush.",
+        "advantage5": "It can be applied to all hair types, even in very short hair, a natural appearance can be achieved with amazing results.",
+        "advantage6": "Micro resource, when applied correctly, protects hair and speeds up the healing process during the treatment of burned hair.",
+        "advantage7": "In micro resource studies we apply on natural hair, we prefer to apply chemical coloring processes on transplanted hair."
+      },
+      "q7": {
+        "title": "How Many Hours is Micro Hair Resource Applied?",
+        "answer": "Micro Resource application varies depending on the amount to be applied. But to give an average, our application time varies between 2-4 hours excluding coloring."
+      },
+      "q8": {
+        "title": "How are Micro Resource Hair Removed?",
+        "answer": "The applied Micro Hair resources are removed by a professional with a special solvent solution formulated for micro resource and a pliers after the recommended use. Then, if any, tangles are opened by combing with the help of an effective special softening spray product against tangling."
+      },
+      "q9": {
+        "title": "Are Micro Resource Hair Guaranteed?",
+        "answer": "CAKA Hair Salon Guarantee: It is very difficult to reach hair that can be micro resource, doesn't tangle, doesn't tangle, can be opened and dyed in the desired color and can be used for a long time.",
+        "guarantee": {
+          "title": "Our Guarantee:",
+          "description": "In the micro resource applications we have made, we prefer to manufacture and use hair that we can say to our guests as a principle \"any problem you may experience is our problem\"."
+        }
+      }
+    },
+    "usageGuide": {
+      "title": "Micro Hair Resource Usage Guide",
+      "subtitle": "Important tips for correct usage",
+      "hairWash": {
+        "title": "How Should Hair Washing Process Be",
+        "step1": "Lather the special shampoo produced for Resource Hair.",
+        "step2": "Completely cleanse the shampoo with water.",
+        "step3": "Apply your special hair conditioner produced for Resource Hair. The cream should stay in the hair for 5 minutes and then rinse.",
+        "step4": "Comb your hair that has been shampooed and conditioned and cleansed from the ends, opening towards the roots.",
+        "step5": "After taking the water with a towel, dry with a hair dryer or vigo."
+      }
+    },
+    "cta": {
+      "title": "Micro Resource Prices",
+      "description": "It wouldn't be right to say this without seeing and analyzing the hair. If you wish, a clear price will be determined when you make an appointment for a free preliminary meeting and visit us.",
+      "callButton": "Call Now",
+      "whatsappButton": "WhatsApp"
+    }
+  },
+  "bilgi": {
+    "title": "Quick Access",
+    "workingHours": {
+      "title": "Working Hours",
+      "weekday": "Weekdays: 09:00 - 19:00",
+      "saturday": "Saturday: 09:00 - 19:00"
+    },
+    "warning": "Our salon is closed on Sundays and Mondays.",
+    "buttons": {
+      "prices": "Price List",
+      "reviews": "Google Reviews",
+      "team": "Our Team",
+      "instagram": "Instagram",
+      "whatsapp": "WhatsApp",
+      "contact": "Contact"
+    }
+  },
+  "survey": {
+    "title": "Survey",
+    "hero": {
+      "title": "Customer Satisfaction Survey",
+      "subtitle": "Would you evaluate us in 6 questions?",
+      "description": "We ask for your feedback to provide you with better quality service. Our survey will only take a few minutes and will help us improve our service quality."
+    },
+    "form": {
+      "title": "CAKA Hair Salon Customer Satisfaction Survey",
+      "subtitle": "Evaluate your experience, help us improve our service",
+      "loading": "Loading..."
+    },
+    "features": {
+      "fast": {
+        "title": "Fast",
+        "description": "Only 2-3 minutes"
+      },
+      "secure": {
+        "title": "Secure",
+        "description": "Google Forms guarantee"
+      },
+      "effective": {
+        "title": "Effective",
+        "description": "Improves our service quality"
+      }
+    }
+  },
+  "footer": {
+    "menu": "Menu",
+    "contact": "Contact",
+    "workingHours": "Working Hours",
+    "tuesdaySaturday": "Tue-Sat: 09:00 - 19:00",
+    "sundayMonday": "Sun-Mon: Closed",
+    "copyright": "© Caka Hair Salon All rights reserved.",
+    "design": "Design Murat KOCATAŞ"
+  }
+}

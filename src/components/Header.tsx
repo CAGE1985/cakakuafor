@@ -3,30 +3,34 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type NavigationItem = {
   href: string;
   label: string;
 };
 
-const NAVIGATION_ITEMS: NavigationItem[] = [
-  { href: "/", label: "Ana Sayfa" },
-  { href: "/hakkimizda", label: "Hakkımızda" },
-  { href: "/ekibimiz", label: "Ekibimiz" },
-  { href: "/fiyat-listesi", label: "Fiyat Listesi" },
-  { href: "/mikrokaynak", label: "Mikro Kaynak" },
-  { href: "/galeri", label: "Galeri" },
-  { href: "/anket", label: "Anket" },
-  { href: "/bizeulasin", label: "Bize Ulaşın" },
-];
-
-
-
 export default function Header() {
+  const { t, language, setLanguage } = useLanguage();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [logoError, setLogoError] = useState(false);
+
+  const NAVIGATION_ITEMS: NavigationItem[] = [
+    { href: "/", label: t('navigation.home') },
+    { href: "/hakkimizda", label: t('navigation.about') },
+    { href: "/ekibimiz", label: t('navigation.team') },
+    { href: "/fiyat-listesi", label: t('navigation.prices') },
+    { href: "/mikrokaynak", label: t('navigation.microKaynak') },
+    { href: "/galeri", label: t('navigation.gallery') },
+    { href: "/anket", label: t('navigation.survey') },
+    { href: "/bizeulasin", label: t('navigation.contact') },
+  ];
+
+
+
+
 
 
   useEffect(() => {
@@ -100,7 +104,44 @@ export default function Header() {
                 </Link>
               );
             })}
-              
+            
+            {/* Language Switcher */}
+            <div className="ml-4 flex items-center gap-1">
+              <button
+                onClick={() => setLanguage('tr')}
+                className={`p-1 rounded transition-all duration-300 hover:scale-110 ${
+                  language === 'tr' 
+                    ? 'ring-2 ring-black' 
+                    : 'hover:ring-1 hover:ring-gray-300'
+                }`}
+                title="Türkçe"
+              >
+                <Image 
+                  src="/icons/flags/tr.svg" 
+                  alt="Türkçe" 
+                  width={24} 
+                  height={18} 
+                  className="rounded-sm"
+                />
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`p-1 rounded transition-all duration-300 hover:scale-110 ${
+                  language === 'en' 
+                    ? 'ring-2 ring-black' 
+                    : 'hover:ring-1 hover:ring-gray-300'
+                }`}
+                title="English"
+              >
+                <Image 
+                  src="/icons/flags/en.svg" 
+                  alt="English" 
+                  width={24} 
+                  height={18} 
+                  className="rounded-sm"
+                />
+              </button>
+            </div>
           </nav>
 
           <button
@@ -174,7 +215,34 @@ export default function Header() {
             >
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-black/10">
-                <h2 className="text-xl font-bold text-black">Menü</h2>
+                <h2 className="text-xl font-bold text-black">{t('navigation.menu')}</h2>
+                
+                {/* Language Switcher - Mobile Header */}
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={() => setLanguage('tr')}
+                    className={`px-2 py-1 rounded transition-all duration-300 hover:scale-110 border ${
+                      language === 'tr' 
+                        ? 'border-black bg-red-500 text-white' 
+                        : 'border-gray-300 bg-white text-black hover:border-gray-400'
+                    }`}
+                    title="Türkçe"
+                  >
+                    <span className="text-xs font-medium">TR</span>
+                  </button>
+                  <button
+                    onClick={() => setLanguage('en')}
+                    className={`px-2 py-1 rounded transition-all duration-300 hover:scale-110 border ${
+                      language === 'en' 
+                        ? 'border-black bg-blue-600 text-white' 
+                        : 'border-gray-300 bg-white text-black hover:border-gray-400'
+                    }`}
+                    title="English"
+                  >
+                    <span className="text-xs font-medium">EN</span>
+                  </button>
+                </div>
+                
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium text-sm flex items-center gap-2"
@@ -182,7 +250,7 @@ export default function Header() {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                  Kapat
+                  {t('navigation.close')}
                 </button>
               </div>
 
@@ -211,10 +279,10 @@ export default function Header() {
                       <div>
                         <div className={`font-semibold text-xs transition-colors duration-300 ${
                           pathname === "/" ? "text-white" : "text-black group-hover:text-blue-600"
-                        }`}>Ana Sayfa</div>
+                        }`}>{t('mobileMenu.home.title')}</div>
                         <div className={`text-xs transition-colors duration-300 ${
                           pathname === "/" ? "text-white/80" : "text-black/60 group-hover:text-blue-500"
-                        }`}>Giriş ekranı</div>
+                        }`}>{t('mobileMenu.home.subtitle')}</div>
                       </div>
                     </div>
                   </Link>
@@ -241,10 +309,10 @@ export default function Header() {
                       <div>
                         <div className={`font-semibold text-xs transition-colors duration-300 ${
                           pathname === "/hakkimizda" ? "text-white" : "text-black group-hover:text-purple-600"
-                        }`}>Hakkımızda</div>
+                        }`}>{t('mobileMenu.about.title')}</div>
                         <div className={`text-xs transition-colors duration-300 ${
                           pathname === "/hakkimizda" ? "text-white/80" : "text-black/60 group-hover:text-purple-500"
-                        }`}>Hikayemiz</div>
+                        }`}>{t('mobileMenu.about.subtitle')}</div>
                       </div>
                     </div>
                   </Link>
@@ -271,10 +339,10 @@ export default function Header() {
                       <div>
                         <div className={`font-semibold text-xs transition-colors duration-300 ${
                           pathname === "/ekibimiz" ? "text-white" : "text-black group-hover:text-green-600"
-                        }`}>Ekibimiz</div>
+                        }`}>{t('mobileMenu.team.title')}</div>
                         <div className={`text-xs transition-colors duration-300 ${
                           pathname === "/ekibimiz" ? "text-white/80" : "text-black/60 group-hover:text-green-500"
-                        }`}>Kadromuz</div>
+                        }`}>{t('mobileMenu.team.subtitle')}</div>
                       </div>
                     </div>
                   </Link>
@@ -301,10 +369,10 @@ export default function Header() {
                       <div>
                         <div className={`font-semibold text-xs transition-colors duration-300 ${
                           pathname === "/fiyat-listesi" ? "text-white" : "text-black group-hover:text-yellow-600"
-                        }`}>Fiyat Listesi</div>
+                        }`}>{t('mobileMenu.prices.title')}</div>
                         <div className={`text-xs transition-colors duration-300 ${
                           pathname === "/fiyat-listesi" ? "text-white/80" : "text-black/60 group-hover:text-yellow-500"
-                        }`}>Güncel tarifeler</div>
+                        }`}>{t('mobileMenu.prices.subtitle')}</div>
                       </div>
                     </div>
             </Link>
@@ -331,10 +399,10 @@ export default function Header() {
                       <div>
                         <div className={`font-semibold text-xs transition-colors duration-300 ${
                           pathname === "/mikrokaynak" ? "text-white" : "text-black group-hover:text-orange-600"
-                        }`}>Mikro Kaynak</div>
+                        }`}>{t('mobileMenu.microKaynak.title')}</div>
                         <div className={`text-xs transition-colors duration-300 ${
                           pathname === "/mikrokaynak" ? "text-white/80" : "text-black/60 group-hover:text-orange-500"
-                        }`}>Saç Uzatma</div>
+                        }`}>{t('mobileMenu.microKaynak.subtitle')}</div>
                       </div>
                     </div>
                   </Link>
@@ -361,10 +429,10 @@ export default function Header() {
                       <div>
                         <div className={`font-semibold text-xs transition-colors duration-300 ${
                           pathname.startsWith("/galeri") ? "text-white" : "text-black group-hover:text-pink-600"
-                        }`}>Galeri</div>
+                        }`}>{t('mobileMenu.gallery.title')}</div>
                         <div className={`text-xs transition-colors duration-300 ${
                           pathname.startsWith("/galeri") ? "text-white/80" : "text-black/60 group-hover:text-pink-500"
-                        }`}>Çalışmalarımız</div>
+                        }`}>{t('mobileMenu.gallery.subtitle')}</div>
                       </div>
                     </div>
                   </Link>
@@ -393,10 +461,10 @@ export default function Header() {
                       <div>
                         <div className={`font-semibold text-xs transition-colors duration-300 ${
                           pathname === "/anket" ? "text-white" : "text-black group-hover:text-indigo-600"
-                        }`}>Anket</div>
+                        }`}>{t('mobileMenu.survey.title')}</div>
                         <div className={`text-xs transition-colors duration-300 ${
                           pathname === "/anket" ? "text-white/80" : "text-black/60 group-hover:text-indigo-500"
-                        }`}>Görüşleriniz</div>
+                        }`}>{t('mobileMenu.survey.subtitle')}</div>
                       </div>
                     </div>
                   </Link>
@@ -423,10 +491,10 @@ export default function Header() {
                        <div>
                          <div className={`font-semibold text-xs transition-colors duration-300 ${
                            pathname === "/bizeulasin" ? "text-white" : "text-black group-hover:text-red-600"
-                         }`}>Bize Ulaşın</div>
+                         }`}>{t('mobileMenu.contact.title')}</div>
                          <div className={`text-xs transition-colors duration-300 ${
                            pathname === "/bizeulasin" ? "text-white/80" : "text-black/60 group-hover:text-red-500"
-                         }`}>İletişim</div>
+                         }`}>{t('mobileMenu.contact.subtitle')}</div>
                        </div>
                      </div>
               </Link>
@@ -434,7 +502,7 @@ export default function Header() {
 
                 {/* Contact Channels */}
                 <div className="mt-4 pt-4 border-t border-gray-200">
-                  <h3 className="text-sm font-semibold text-black/80 mb-3 text-center">İletişim Kanalları</h3>
+                  <h3 className="text-sm font-semibold text-black/80 mb-3 text-center">{t('mobileMenu.contactChannels')}</h3>
                   <div className="grid grid-cols-2 gap-2">
                     {/* WhatsApp */}
                     <a
@@ -457,7 +525,7 @@ export default function Header() {
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      <span className="text-sm">Ara</span>
+                      <span className="text-sm">{t('mobileMenu.call')}</span>
                     </a>
 
                     {/* Location */}
@@ -471,7 +539,7 @@ export default function Header() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="text-sm">Konum</span>
+                      <span className="text-sm">{t('mobileMenu.location')}</span>
                     </a>
 
                     {/* Instagram */}

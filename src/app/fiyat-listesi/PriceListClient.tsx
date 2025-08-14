@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Category = {
   title: string;
@@ -10,6 +11,41 @@ type Category = {
 // Google Sheets CSV URL (public)
 const CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNZ7MP6g1TlWQjWWax9WFxgArs041ZxyF0iYDoXxn94yDxhLRR5jPwezK_KsVInp1vxAFPmDUOfR-e/pub?output=csv&gid=548912877&single=true";
+
+// Çeviri anahtarları eşleştirmesi
+const TRANSLATION_KEYS = {
+  // Kategori başlıkları
+  "SAÇ KESİMİ": "prices.categories.haircut",
+  "SAÇ BOYAMA": "prices.categories.coloring",
+  "SAÇ BAKIMI": "prices.categories.haircare",
+  "MAKYAJ": "prices.categories.makeup",
+  "MİKRO KAYNAK": "prices.categories.microResource",
+  "GELİN SAÇI": "prices.categories.bridal",
+  "CİLT BAKIMI": "prices.categories.skincare",
+  
+  // Hizmet isimleri
+  "Kadın Saç Kesimi": "prices.services.womenHaircut",
+  "Erkek Saç Kesimi": "prices.services.menHaircut",
+  "Çocuk Saç Kesimi": "prices.services.childrenHaircut",
+  "Saç Boyama": "prices.services.hairColoring",
+  "Saç Açma": "prices.services.hairLightening",
+  "Saç Koyulaştırma": "prices.services.hairDarkening",
+  "Saç Bakımı": "prices.services.hairCare",
+  "Saç Yıkama": "prices.services.hairWashing",
+  "Saç Şekillendirme": "prices.services.hairStyling",
+  "Makyaj": "prices.services.makeup",
+  "Gelin Makyajı": "prices.services.bridalMakeup",
+  "Mikro Kaynak": "prices.services.microResource",
+  "Gelin Saçı": "prices.services.bridalHair",
+  "Cilt Bakımı": "prices.services.skinCare",
+  "Yüz Bakımı": "prices.services.facialCare",
+  
+  // Fiyat kategorileri
+  "Kısa": "prices.lengths.short",
+  "Orta": "prices.lengths.medium", 
+  "Uzun": "prices.lengths.long",
+  "Çok Uzun": "prices.lengths.veryLong"
+};
 
 function parseCsv(text: string): string[][] {
   const rows: string[][] = [];
@@ -87,7 +123,27 @@ function groupByCategory(rows: string[][]): Category[] {
   return categories;
 }
 
+// Çeviri fonksiyonu
+function translateText(text: string, t: (key: string) => any): string {
+  const trimmedText = text.trim();
+  
+  // Çeviri anahtarı varsa kullan
+  if (TRANSLATION_KEYS[trimmedText as keyof typeof TRANSLATION_KEYS]) {
+    const translation = t(TRANSLATION_KEYS[trimmedText as keyof typeof TRANSLATION_KEYS]);
+    return translation || trimmedText; // Çeviri bulunamazsa orijinal metni döndür
+  }
+  
+  // Fiyat ise çevirme
+  if (trimmedText.match(/^\d+/) || trimmedText.includes('₺')) {
+    return trimmedText;
+  }
+  
+  // Çeviri anahtarı yoksa orijinal metni döndür
+  return trimmedText;
+}
+
 export default function PriceListClient() {
+  const { t, language } = useLanguage();
   const [categories, setCategories] = useState<Category[]>([]);
   const [openCategories, setOpenCategories] = useState<Set<number>>(new Set([0]));
   const [loading, setLoading] = useState(true);
@@ -102,11 +158,22 @@ export default function PriceListClient() {
         const text = await res.text();
         const parsed = parseCsv(text);
         const grouped = groupByCategory(parsed);
+        
         if (!mounted) return;
-        setCategories(grouped);
-        setOpenCategories(new Set([0])); // İlk kategoriyi açık başlat
+        
+        // Verileri çevir
+        const translatedCategories = grouped.map(category => ({
+          ...category,
+          title: translateText(category.title, t),
+          rows: category.rows.map(row => 
+            row.map(cell => translateText(cell, t))
+          )
+        }));
+        
+        setCategories(translatedCategories);
+        setOpenCategories(new Set([0]));
       } catch {
-        setError("Fiyat listesi yüklenirken bir hata oluştu.");
+        setError(t('prices.error'));
       } finally {
         setLoading(false);
       }
@@ -115,15 +182,13 @@ export default function PriceListClient() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [t, language]); // language değiştiğinde de yeniden yükle
 
   const toggleCategory = (index: number) => {
     const newOpenCategories = new Set(openCategories);
     if (newOpenCategories.has(index)) {
-      // Eğer tıklanan kategori zaten açıksa, kapat
       newOpenCategories.delete(index);
     } else {
-      // Eğer tıklanan kategori kapalıysa, diğerlerini kapat ve bunu aç
       newOpenCategories.clear();
       newOpenCategories.add(index);
     }
@@ -135,7 +200,7 @@ export default function PriceListClient() {
       <div className="flex items-center justify-center py-20">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-800 mx-auto mb-4"></div>
-          <p className="text-gray-600">Fiyat listesi yükleniyor...</p>
+          <p className="text-gray-600">{t('prices.loading')}</p>
         </div>
       </div>
     );
@@ -210,9 +275,9 @@ export default function PriceListClient() {
                               isService ? 'font-medium text-gray-800' : 'text-gray-600'
                             }`}>
                               {isPrice ? (
-                                                               <span className="font-semibold text-gray-800">
-                                 {cell.includes('₺') ? cell : `${cell} ₺`}
-                               </span>
+                                <span className="font-semibold text-gray-800">
+                                  {cell.includes('₺') ? cell : `${cell} ₺`}
+                                </span>
                               ) : (
                                 cell
                               )}
@@ -232,8 +297,7 @@ export default function PriceListClient() {
       {/* Bilgi notu */}
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-center">
         <p className="text-blue-700 text-sm">
-          💡 Fiyatlar saç uzunluğu ve hizmet detaylarına göre değişebilir. 
-          Detaylı bilgi için bizimle iletişime geçin.
+          {t('prices.note')}
         </p>
       </div>
     </div>

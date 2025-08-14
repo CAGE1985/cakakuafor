@@ -4,8 +4,10 @@ import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { MailIcon } from "@/components/Icons";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -80,13 +82,12 @@ export default function ContactForm() {
         <Reveal>
           <div className="text-center mb-12">
             <SectionHeading 
-              title="İletişim Formu" 
-              subtitle="Bize Mesaj Gönderin" 
+              title={t('contact.form.title')} 
+              subtitle={t('contact.form.subtitle')} 
               icon={<MailIcon />} 
             />
             <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-              Sorularınız, önerileriniz veya randevu talepleriniz için aşağıdaki formu doldurabilirsiniz. 
-              En kısa sürede size geri dönüş yapacağız.
+              {t('contact.form.subtitle')}
             </p>
           </div>
         </Reveal>
@@ -96,53 +97,51 @@ export default function ContactForm() {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               {/* Form Header */}
               <div className="bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-8 text-white">
-                <h2 className="text-2xl font-bold mb-2">Mesaj Gönderin</h2>
+                <h2 className="text-2xl font-bold mb-2">{t('contact.form.title')}</h2>
                 <p className="text-purple-100">
-                  Tüm alanları doldurarak bize ulaşın
+                  {t('contact.form.subtitle')}
                 </p>
               </div>
 
-              {/* Contact Form */}
-              <form onSubmit={handleSubmit} className="p-6 space-y-6">
-                {/* Name & Email Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      İsim Soyisim <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
-                      placeholder="Adınız ve soyadınız"
-                    />
+              {/* Form Content */}
+              <div className="p-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        {t('contact.form.name')}
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                        placeholder={t('contact.form.name')}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        {t('contact.form.email')}
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                        placeholder={t('contact.form.email')}
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      E-posta <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
-                      placeholder="ornek@email.com"
-                    />
-                  </div>
-                </div>
 
-                {/* Phone & Subject Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Telefon <span className="text-red-500">*</span>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      {t('contact.form.phone')}
                     </label>
                     <input
                       type="tel"
@@ -150,99 +149,49 @@ export default function ContactForm() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
-                      placeholder="0555 123 45 67"
+                      placeholder={t('contact.form.phone')}
                     />
                   </div>
+
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Konu <span className="text-red-500">*</span>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      {t('contact.form.message')}
                     </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
+                      rows={6}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors resize-none"
+                      placeholder={t('contact.form.message')}
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <option value="">Konu seçiniz</option>
-                      <option value="Randevu Talebi">Randevu Talebi</option>
-                      <option value="Fiyat Bilgisi">Fiyat Bilgisi</option>
-                      <option value="Hizmet Sorusu">Hizmet Sorusu</option>
-                      <option value="Öneri/Şikayet">Öneri/Şikayet</option>
-                      <option value="Diğer">Diğer</option>
-                    </select>
-                  </div>
-                </div>
+                      {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
+                    </button>
 
-                {/* Message */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Mesajınız <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors resize-none"
-                    placeholder="Mesajınızı buraya yazın..."
-                  />
-                </div>
-
-                {/* Submit Status Messages */}
-                {submitStatus === "success" && (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                    <div className="flex items-center">
-                      <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <p className="text-green-700 font-medium">Mesajınız başarıyla gönderildi! En kısa sürede size geri dönüş yapacağız.</p>
-                    </div>
-                  </div>
-                )}
-
-                {submitStatus === "error" && (
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                    <div className="flex items-center">
-                      <svg className="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                      <p className="text-red-700 font-medium">Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin veya telefon ile iletişime geçin.</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Submit Button */}
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Gönderiliyor...
-                      </>
-                    ) : (
-                      <>
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                        Mesaj Gönder
-                      </>
+                    {submitStatus === "success" && (
+                      <div className="text-green-600 font-medium">
+                        {t('contact.form.success')}
+                      </div>
                     )}
-                  </button>
-                </div>
-              </form>
+                    {submitStatus === "error" && (
+                      <div className="text-red-600 font-medium">
+                        {t('contact.form.error')}
+                      </div>
+                    )}
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </Reveal>

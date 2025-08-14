@@ -3,8 +3,11 @@
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { InfoIcon } from "@/components/Icons";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AnketClient() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen pt-20 md:pt-24">
       {/* Hero Section */}
@@ -13,13 +16,12 @@ export default function AnketClient() {
           <Reveal>
             <div className="text-center">
               <SectionHeading 
-                title="Müşteri Memnuniyeti Anketi" 
-                subtitle="Bizi 6 Soruda Değerlendirir misiniz?" 
+                title={t('survey.hero.title')} 
+                subtitle={t('survey.hero.subtitle')} 
                 icon={<InfoIcon />} 
               />
               <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Sizlere daha kaliteli hizmet verebilmek için bize geribildirimde bulunmanızı rica ediyoruz. 
-                Anketimiz sadece birkaç dakikanızı alacak ve hizmet kalitemizi artırmamıza yardımcı olacaktır.
+                {t('survey.hero.description')}
               </p>
             </div>
           </Reveal>
@@ -33,9 +35,9 @@ export default function AnketClient() {
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               {/* Survey Header */}
               <div className="bg-gradient-to-r from-purple-500 to-pink-500 px-4 sm:px-6 py-6 sm:py-8 text-white">
-                <h2 className="text-xl sm:text-2xl font-bold mb-2">CAKA Kuaför Müşteri Memnuniyeti Anketi</h2>
+                <h2 className="text-xl sm:text-2xl font-bold mb-2">{t('survey.form.title')}</h2>
                 <p className="text-sm sm:text-base text-purple-100">
-                  Deneyiminizi değerlendirin, hizmetimizi geliştirmemize yardımcı olun
+                  {t('survey.form.subtitle')}
                 </p>
               </div>
 
@@ -55,9 +57,9 @@ export default function AnketClient() {
                         minHeight: '500px',
                         maxHeight: '80vh'
                       }}
-                      title="CAKA Kuaför Müşteri Memnuniyeti Anketi"
+                      title={t('survey.form.title')}
                     >
-                      Yükleniyor...
+                      {t('survey.form.loading')}
                     </iframe>
                   </div>
                 </div>
@@ -70,8 +72,8 @@ export default function AnketClient() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Hızlı</h3>
-                    <p className="text-xs sm:text-sm text-gray-600">Sadece 2-3 dakika</p>
+                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">{t('survey.features.fast.title')}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">{t('survey.features.fast.description')}</p>
                   </div>
 
                   <div className="text-center p-3 sm:p-4 bg-pink-50 rounded-xl">
@@ -80,8 +82,8 @@ export default function AnketClient() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Güvenli</h3>
-                    <p className="text-xs sm:text-sm text-gray-600">Google Forms güvencesi</p>
+                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">{t('survey.features.secure.title')}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">{t('survey.features.secure.description')}</p>
                   </div>
 
                   <div className="text-center p-3 sm:p-4 bg-purple-50 rounded-xl">
@@ -90,8 +92,8 @@ export default function AnketClient() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">Etkili</h3>
-                    <p className="text-xs sm:text-sm text-gray-600">Hizmet kalitemizi artırır</p>
+                    <h3 className="font-semibold text-gray-800 mb-1 text-sm sm:text-base">{t('survey.features.effective.title')}</h3>
+                    <p className="text-xs sm:text-sm text-gray-600">{t('survey.features.effective.description')}</p>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,10 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { UsersIcon } from "@/components/Icons";
 import TeamMemberCard from "./TeamMemberCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TEAM_MEMBERS = [
   "TARIK",
@@ -23,6 +26,8 @@ const TEAM_MEMBERS = [
 ];
 
 export default function EkibimizPage() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen pt-20 md:pt-24">
       {/* Hero Section */}
@@ -31,13 +36,12 @@ export default function EkibimizPage() {
           <Reveal>
             <div className="text-center">
               <SectionHeading 
-                title="Ekibimiz" 
-                subtitle="Profesyonel Uzmanlarımız" 
+                title={t('team.hero.title')} 
+                subtitle={t('team.hero.subtitle')} 
                 icon={<UsersIcon />} 
               />
               <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-                CAKA Hair & Makeup Studio&apos;nun deneyimli ve uzman ekibi, 
-                sizlere en kaliteli hizmeti sunmak için burada.
+                {t('team.hero.description')}
               </p>
             </div>
           </Reveal>
@@ -62,10 +66,10 @@ export default function EkibimizPage() {
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ekibimizle Tanışın
+              {t('team.hero.title')}
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-              Profesyonel ekibimizle tanışmak ve randevu almak için hemen iletişime geçin.
+              {t('team.hero.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -75,7 +79,7 @@ export default function EkibimizPage() {
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                Hemen Ara
+                {t('contact.channels.phone.title')}
               </a>
               <a
                 href="https://wa.me/905548843878"

@@ -1,4 +1,7 @@
+"use client";
+
 import { ReactElement } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 type StatItem = {
   icon: ReactElement;
@@ -33,27 +36,29 @@ function UsersIcon() {
 }
 
 export default function Stats() {
+  const { t } = useLanguage();
+
   const items: StatItem[] = [
     {
       icon: <StarIcon />,
       value: "18+",
-      label: "Yıl Deneyim",
+      label: t('home.stats.experience'),
     },
     {
       icon: <HeartIcon />,
       value: "1000+",
-      label: "Her ay Mutlu Müşteri",
+      label: t('home.stats.customers'),
     },
     {
       icon: <UsersIcon />,
       value: "16+",
-      label: "Kişilik Ekip",
+      label: t('home.stats.services'),
     },
   ];
 
   return (
     <div>
-      <div className="text-sm font-semibold tracking-wide text-black/70 uppercase">Rakamlarla CAKA</div>
+      <div className="text-sm font-semibold tracking-wide text-black/70 uppercase">{t('home.stats.title')}</div>
       <div className="mt-4 grid grid-cols-3 gap-4">
         {items.map((item) => (
           <div
