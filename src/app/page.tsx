@@ -7,7 +7,7 @@ import { InfoIcon, EyeIcon, TargetIcon, UsersIcon, HeartIcon } from "@/component
 
 export default function Home() {
   return (
-    <div className="font-sans pt-20 md:pt-24">
+    <div className="font-sans pt-4 md:pt-6">
       {/* Hero Slider Section */}
       <section className="relative">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
