@@ -110,14 +110,14 @@ export default function SalonumuzPage() {
           
           <Reveal>
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                poster="/salonumuz/video-poster.jpg"
-              >
-                <source src="https://video.wixstatic.com/video/5572e1_bf0f901e18f6470f9f3a95bc7f4156e3/1080p/mp4/file.mp4" type="video/mp4" />
-                Tarayıcınız video oynatmayı desteklemiyor.
-              </video>
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/y2_Tuu3_-oM?rel=0&modestbranding=1"
+                title="CAKA Kuaför Salonumuz Tanıtım Videosu"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
               
               {/* Video overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
